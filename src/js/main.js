@@ -5,19 +5,16 @@ import * as bootstrap from "bootstrap";
 import Papa from "papaparse";
 
 
-// Import text file
-// Papa.parse("https://raw.githubusercontent.com/Tom-Jenkins/seafan_sdm/main/data/deadmansfingers_presence_pts.csv", {
-//     header: true,
-//     download: true,
-// 	complete: function(results) {
-// 		console.log("Finished:", results);
-// 	}
-// });
-Papa.parse("src/data/count_data_filtered_with_gene_names.csv", {
+// Import CSV file from GitHub
+let data;
+Papa.parse("https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/main/src/data/count_data_filtered_with_gene_names.csv", {
     header: true,
     download: true,
+    skipEmptyLines: true,
 	complete: function(results) {
-		console.log("Finished:", results);
+		// console.log("Finished:", results);
+        data = results;
+        console.log(data);
 	}
 });
 
