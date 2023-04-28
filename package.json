@@ -19,12 +19,16 @@
   "homepage": "https://github.com/Tom-Jenkins/LobsterGeneX#readme",
   "dependencies": {
     "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.5",
     "echarts": "^5.4.2",
-    "lodash-es": "^4.17.21"
+    "lodash-es": "^4.17.21",
+    "papaparse": "^5.4.1",
+    "slim-select": "^2.4.5"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.8.3",
     "@types/bootstrap": "^5.2.6",
+    "@types/papaparse": "^5.3.7",
     "parcel": "^2.8.3"
   }
 }

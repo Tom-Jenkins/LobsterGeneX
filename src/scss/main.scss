@@ -1,6 +1,14 @@
 // Import Bootstrap CSS
 // @import "~bootstrap/scss/bootstrap";
 
+// Import Bootstrap icons CSS
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
 // Import Bootswatch Sandstone theme CSS
-@import "./bootstrap.min.css"
+@import "./bootstrap.min.css";
+
+// Import Slim Select CSS
+@import "../../node_modules/slim-select/dist/slimselect.css";
+
+
 
