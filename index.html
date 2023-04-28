@@ -5,23 +5,38 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>LobsterGeneX</title>
         <!-- CSS -->
-        <link rel="stylesheet" href="src/scss/main.scss">
+        <link rel="stylesheet" href="./src/scss/main.scss">
         <!-- JavaScript -->
         <script defer type="module" src="./src/js/main.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg bg-primary">
             <div class="container-fluid">
-                <span class="navbar-brand text-white" href="#">LobsterGeneX</span>
+                <span>
+                    <img src="./src/img/icon-lobster2.svg" width="40px" height="40px" fill="white">
+                    <span class="navbar-brand text-white" href="#">LobsterGeneX</span>
+                </span>
+                
             </div>
         </nav>
         <div class="container py-4 px-3 mx-auto">
-            <h1>LobsterGeneX UI</h1>
+            <h1>LobsterGeneX replace X with DNA icon!</h1>
             <button class="btn btn-primary">Primary button</button>
+            <i class="bi bi-airplane-engines-fill"></i>
+            <br><br>
+            <p>
+                Try typing one of "apple", "pinaple", "garlic"
+            </p>
+            <input id="geneSelector" type="text" list="gene-list" placeholder="Search" autocomplete="off"/>
+            <datalist id="gene-list"></datalist>
+            <button>X</button>
+            <br><br>
+            <input type="file" id="file">
         </div>
         <!-- ECHARTS EXAMPLE -->
         <div>
-
+            
+                
         </div>
     </body>
 </html>
