@@ -11,6 +11,15 @@ import * as bootstrap from "bootstrap";
 import {importData} from "./importData";
 import {renderGeneSelector} from "./geneSelector";
 import {renderPlot} from "./plotData";
+import {echartsPlot} from "./plotData";
+
+
+
+// ------------------- //
+//
+// Main App Function
+//
+// ------------------- //
 
 // Gene expression file URL
 const file = "https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/main/src/data/count_data_filtered_with_gene_names.csv";
@@ -18,17 +27,39 @@ const file = "https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/main/sr
 // 1. Render gene selection text box
 importData(file, renderGeneSelector);
 
-// Deactivate DNA loading spinner when gene selection content has rendered
-document.getElementById("dna-spinner").classList.add("hidden");
+// Delay code executation by two seconds so that spinner does not instantly disappear for fast rendering / internet connections
+setTimeout( () => {
 
-// Activate navbar brand content when loading is complete
-document.getElementById("navbar-content").classList.remove("invisible");
+    // Deactivate DNA loading spinner when gene selection content has rendered
+    document.getElementById("dna-spinner").classList.add("hidden");
 
-// Activate gene selection component when loading is complete
-document.getElementById("gene-selection-container").classList.remove("hidden");
+    // Activate gene selection component when loading is complete
+    document.getElementById("gene-selection-container").classList.remove("hidden");
+}, 2000);
+
+// document.getElementById("dna-spinner").classList.add("hidden");
+// document.getElementById("gene-selection-container").classList.remove("hidden");
 
 // 2. Render boxplot when user selects a gene and clicks plot button
 document.getElementById("plot-bttn").addEventListener("click", (e) => {
     e.preventDefault();
     importData(file, renderPlot);
 });
+
+
+
+// ------------------- //
+//
+// Additional Functions
+//
+// ------------------- //
+
+// Clear gene ID input box on click of button
+document.getElementById("clear-geneID-bttn").addEventListener("click", () => {
+    document.getElementById("gene-selector").value = "";
+});
+
+// Resize ECharts plot when screen size changes
+window.onresize = function() {
+    echartsPlot.resize();
+};

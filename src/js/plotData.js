@@ -7,6 +7,9 @@
 // Import JS from ECharts
 import * as echarts from "echarts";
 
+// Initiate echarts variable
+export let echartsPlot;
+
 // Function to render echarts plot
 export function renderPlot (data) { 
 
@@ -23,7 +26,7 @@ export function renderPlot (data) {
         console.log(selectedGeneData);
 
         // Initiate echarts instance
-        const echartsPlot = echarts.init(plotElement);
+        echartsPlot = echarts.init(plotElement);
 
         // Specify the configuration items and data for the chart
         const option = {
