@@ -65,7 +65,7 @@ export function renderPlot (data) {
 
             // TITLE
             title: {
-                text: `${geneSelected}: Gene Expression`
+                text: `Gene: ${geneSelected}`
             },
 
             // TOOLTIP

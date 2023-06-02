@@ -27,7 +27,7 @@ const file = "https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/main/sr
 // 1. Render gene selection text box
 importData(file, renderGeneSelector);
 
-// Delay code executation by two seconds so that spinner does not instantly disappear for fast rendering / internet connections
+// Delay code executation by two seconds so that DNA spinner does not instantly disappear in fast rendering / internet connections
 setTimeout( () => {
 
     // Deactivate DNA loading spinner when gene selection content has rendered
@@ -35,7 +35,8 @@ setTimeout( () => {
 
     // Activate gene selection component when loading is complete
     document.getElementById("gene-selection-container").classList.remove("hidden");
-}, 2000);
+
+}, 0000);
 
 // document.getElementById("dna-spinner").classList.add("hidden");
 // document.getElementById("gene-selection-container").classList.remove("hidden");
@@ -53,11 +54,6 @@ document.getElementById("plot-bttn").addEventListener("click", (e) => {
 // Additional Functions
 //
 // ------------------- //
-
-// Clear gene ID input box on click of button
-document.getElementById("clear-geneID-bttn").addEventListener("click", () => {
-    document.getElementById("gene-selector").value = "";
-});
 
 // Resize ECharts plot when screen size changes
 window.onresize = function() {
