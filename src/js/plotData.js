@@ -80,7 +80,7 @@ export function renderPlot (data) {
             // XAXIS
             xAxis: {
                 type: "category",
-                // data : ["Eye", "Gill", "Gonad", "Gut", "Heart", "Juvenile", "Muscle", "Nerve", "Ovary"],
+                data : ["Eye", "Gill", "Gonad", "Gut", "Heart", "Juvenile", "Muscle", "Nerve", "Ovary"],
                 boundaryGap: true,
                 namegap: 30,
                 splitArea: {

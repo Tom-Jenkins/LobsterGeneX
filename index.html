@@ -31,15 +31,30 @@
                         <div class="modal-dialog modal-dialog-centered modal-lg">
                           <div class="modal-content">
                             <div class="modal-header">
-                                <h2 class="modal-title fw-bold" id="infoModalLabel">About LobsterGeneX</h2>
+                                <h1 class="modal-title fw-bold" id="infoModalLabel">About LobsterGeneX</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body text-wrap">
                                 <p>
-                                    LobsterGeneX is a web application designed to visualise gene expression results from ten different tissue types from the European lobster (Homarus gammarus). The results are discussed in the article XXX (Paris et al. 202X). 
+                                    LobsterGeneX is a web application designed to visualise gene expression results from ten different tissue types from the European lobster (<em>Homarus gammarus</em>).
                                 </p>
+                                <p>
+                                    Tissue types analysed:
+                                    <ul>
+                                        <li>Eye</li>
+                                        <li>Gill</li>
+                                        <li>Gonad</li>
+                                        <li>Gut</li>
+                                        <li>Heart</li>
+                                        <li>Juvenile</li>
+                                        <li>Muscle</li>
+                                        <li>Nerve</li>
+                                        <li>Ovary</li>
+                                    </ul>  
+                                </p>
+                                <p>The results are discussed in the article XXX (Paris <em>et al</em>. 202X).</p>
                             </div>
-                            <div class="modal-footer">
+                            <div class="modal-footer d-flex justify-content-center">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             </div>
                           </div>
@@ -72,8 +87,6 @@
                 <input class="mx-2" id="plot-bttn" type="submit" value="Plot Expression">
             </form>
             <datalist id="gene-list"></datalist>
-            <!-- <button id="clear-geneID-bttn">X</button>
-            <button id="plot-bttn">Plot Boxplot</button> -->
         </div>
 
         <!-- ECHARTS CONTAINER -->
