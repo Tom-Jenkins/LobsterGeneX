@@ -10,33 +10,44 @@
         <script defer type="module" src="./src/js/main.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg bg-primary">
-            <div class="container-fluid">
-                <span>
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-md bg-primary">
+            <div class="container-fluid" id="navbar-content">
+                <span class="invisible">
                     <img src="./src/img/icon-lobster2.svg" width="40px" height="40px" fill="white">
-                    <span class="navbar-brand text-white" href="#">LobsterGeneX</span>
+                    <span class="navbar-brand text-white px-2" href="#">LobsterGeneX</span>
                 </span>
-                
             </div>
         </nav>
-        <div class="container py-4 px-3 mx-auto">
-            <h1>LobsterGeneX replace X with DNA icon!</h1>
-            <button class="btn btn-primary">Primary button</button>
-            <i class="bi bi-airplane-engines-fill"></i>
-            <br><br>
-            <p>
-                Try typing one of "apple", "pinaple", "garlic"
-            </p>
-            <input id="geneSelector" type="text" list="gene-list" placeholder="Search" autocomplete="off"/>
+
+        <!-- DNA LOADING SPINNER -->
+        <div class="DNA_cont position-absolute top-50 start-50 translate-middle" id="dna-spinner">
+            <div class="nucleobase"></div>
+            <div class="nucleobase"></div>
+            <div class="nucleobase"></div>
+            <div class="nucleobase"></div>
+            <div class="nucleobase"></div>
+            <div class="nucleobase"></div>
+            <div class="nucleobase"></div>
+            <div class="nucleobase"></div>
+            <div class="nucleobase"></div>
+            <div class="nucleobase"></div>
+        </div>
+
+        <!-- GENE SELECTION CONTAINER -->
+        <div class="container py-4 px-3 mx-auto hidden" id="gene-selection-container">
+            <!-- <h1>LobsterGeneX replace X with DNA icon!</h1> -->
+            <span><strong>Enter Gene ID</strong></span></br>
+            <input id="gene-selector" type="text" list="gene-list" placeholder="Search up to 15,000 genes" autocomplete="off"/>
             <datalist id="gene-list"></datalist>
-            <button>X</button>
-            <br><br>
-            <input type="file" id="file">
+            <button id="plot-bttn">X</button>
         </div>
-        <!-- ECHARTS EXAMPLE -->
-        <div>
-            
-                
+
+        <!-- ECHARTS CONTAINER -->
+        <div class="container py-2 px-3 mx-auto">
+            <div id="plot" style="width: 1000px; height:500px;"></div>
         </div>
+        
     </body>
 </html>

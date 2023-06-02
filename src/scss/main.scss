@@ -7,8 +7,23 @@
 // Import Bootswatch Sandstone theme CSS
 @import "./bootstrap.min.css";
 
-// Import Slim Select CSS
-@import "../../node_modules/slim-select/dist/slimselect.css";
+// Import DNA loading spinner CSS
+@import "./dnaSpinner.scss";
 
+
+// CSS
+.hidden {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+// #dna-spinner {}
+
+#gene-selector {
+    width: 200px;
+}
 
 
