@@ -29,14 +29,19 @@ export function renderPlot (data) {
         let selectedGeneData = data[selectedGeneIndex];
         console.log(selectedGeneData);
 
+        // Extract minimum and maximum values (+- 1)
+        let allValues = Object.values(selectedGeneData); // extract all expression values from object
+        allValues.shift(); // remove first element in array
+        let minValue = (Math.min(...allValues) - 1).toFixed(0);
+        let maxValue = (Math.max(...allValues) + 1).toFixed(0);
+        console.log(minValue, maxValue);
+
         // Initiate echarts instance
         echartsPlot = echarts.init(plotElement);
 
         // Specify the configuration items and data for the chart
         const option = {
 
-            // TODO: Create a raw points data set using help from echarts examples
-            
             // DATA
             dataset: [
                 {
@@ -95,6 +100,65 @@ export function renderPlot (data) {
                 }
             ],
 
+            // TOOLTIP
+            tooltip: {
+                trigger: "axis",
+                axisPointer: {
+                    type: "none",
+                },
+                formatter: function(params) {
+
+                    // HTML content for tooltip
+                    let tooltipContent = ``;
+
+                    // Add both boxplot and scatter tooltips when both are selected in legend
+                    if (params.length === 5) {
+                        tooltipContent += `
+                            <span style="display:inline-block;margin-bottom:1px;margin-right:5px;border-radius:50%;width:10px;height:10px;background-color:${params[0].color}"></span>
+                            <span class="fw-bold fs-6">${params[0].name}</span>
+                            </br>
+                            <span>Replicate 1: <strong class="px-2">${params[1].value[1].toFixed(2)}</strong></span>
+                            </br>
+                            <span>Replicate 2: <strong class="px-2">${params[2].value[1].toFixed(2)}</strong></span>
+                            </br>
+                            <span>Replicate 3: <strong class="px-2">${params[3].value[1].toFixed(2)}</strong></span>
+                            </br>
+                            <span>Replicate 4: <strong class="px-2">${params[4].value[1].toFixed(2)}</strong></span>
+                        `;
+                    };
+
+                    // Add only scatter tooltip when boxplot is deselected in legend
+                    if (params.length === 4) {
+                        tooltipContent += `
+                            <span style="display:inline-block;margin-bottom:1px;margin-right:5px;border-radius:50%;width:10px;height:10px;background-color:${params[0].color}"></span>
+                            <span class="fw-bold fs-6">${params[0].name}</span>
+                            </br>
+                            <span>Replicate 1: <strong class="px-2">${params[0].value[1].toFixed(2)}</strong></span>
+                            </br>
+                            <span>Replicate 2: <strong class="px-2">${params[1].value[1].toFixed(2)}</strong></span>
+                            </br>
+                            <span>Replicate 3: <strong class="px-2">${params[2].value[1].toFixed(2)}</strong></span>
+                            </br>
+                            <span>Replicate 4: <strong class="px-2">${params[1].value[1].toFixed(2)}</strong></span>
+                        `;
+                    };
+
+                    // Add only boxplot tooltip when scatter is deselected in legend
+                    if (params.length === 1) {
+                        tooltipContent += `
+                            <span style="display:inline-block;margin-bottom:1px;margin-right:5px;border-radius:50%;width:10px;height:10px;background-color:${params[0].color}"></span>
+                            <span class="fw-bold fs-6">${params[0].name}</span>
+                        `;
+                    };
+
+                    return tooltipContent;
+                }
+            },
+
+            axisPointer:{
+                snap: false
+            },
+
             // COLOURS
             color: customCols,
 
@@ -103,9 +167,6 @@ export function renderPlot (data) {
                 text: `Gene: ${geneSelected}`
             },
 
-            // TOOLTIP
-            tooltip: {},
-
             // LEGEND
             legend: {
                 show: true,
@@ -113,8 +174,14 @@ export function renderPlot (data) {
                 formatter: "Toggle {name}",
                 itemStyle: {
                     color: "#2c3e50",
+                    opacity: "0.50",
                     borderColor: "transparent"
                 },
+                inactiveBorderColor: "transparent",
+                selected: {
+                    "Boxplot": true,
+                    "Raw Data": true,
+                }
             },
 
             // XAXIS
@@ -131,18 +198,24 @@ export function renderPlot (data) {
                     rotate: 90,
                     margin: 5, // distance between axis labels and axis line
                     fontSize: 15,
+                    // fontFamily: "arial",
                 }
             },
 
             // YAXIS
             yAxis: {
                 type: "value",
-                name: "Expression (raw counts)",
+                name: "Expression (VST normalisation)",
                 nameLocation: "center",
                 nameGap: 50,
                 splitArea: {
                     show: true
-                }
+                },
+                min: minValue,
+                max: maxValue,
+                // axisLabel: {
+                //     fontFamily: "arial"
+                // }
             },
 
             // GRID
@@ -160,6 +233,7 @@ export function renderPlot (data) {
                 feature: {
                     dataZoom: {},
                     // dataView: {},
+                    // restore: { title: "Reset" },
                     saveAsImage: {
                         type: "png",
                         name: `${geneSelected}_expression`,

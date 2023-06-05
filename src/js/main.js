@@ -22,12 +22,13 @@ import {echartsPlot} from "./plotData";
 // ------------------- //
 
 // Gene expression file URL
-const file = "https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/main/src/data/count_data_filtered_with_gene_names.csv";
+// const file = "https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/main/src/data/count_data_filtered_with_gene_names.csv";
+const file = "https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/prototype/data/vst_normalised_counts_matrix_3decplace.csv";
 
 // 1. Render gene selection text box
 importData(file, renderGeneSelector);
 
-// Delay code executation by two seconds so that DNA spinner does not instantly disappear in fast rendering / internet connections
+// Delay code executation by X seconds so that DNA spinner does not instantly disappear in fast rendering / internet connections
 setTimeout( () => {
 
     // Deactivate DNA loading spinner when gene selection content has rendered
