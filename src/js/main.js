@@ -37,7 +37,7 @@ setTimeout( () => {
     // Activate gene selection component when loading is complete
     document.getElementById("gene-selection-container").classList.remove("hidden");
 
-}, 0000);
+}, 2000);
 
 // document.getElementById("dna-spinner").classList.add("hidden");
 // document.getElementById("gene-selection-container").classList.remove("hidden");
