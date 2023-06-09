@@ -22,7 +22,6 @@ import {echartsPlot} from "./plotData";
 // ------------------- //
 
 // Gene expression file URL
-// const file = "https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/main/src/data/count_data_filtered_with_gene_names.csv";
 const file = "https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/prototype/data/vst_normalised_counts_matrix_3decplace.csv";
 
 // 1. Render gene selection text box
@@ -37,7 +36,7 @@ setTimeout( () => {
     // Activate gene selection component when loading is complete
     document.getElementById("gene-selection-container").classList.remove("hidden");
 
-}, 2000);
+}, 3000);
 
 // document.getElementById("dna-spinner").classList.add("hidden");
 // document.getElementById("gene-selection-container").classList.remove("hidden");

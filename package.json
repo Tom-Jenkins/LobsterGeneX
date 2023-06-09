@@ -1,10 +1,11 @@
 {
   "name": "lobstergenex",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "App to visualise gene expression data",
+  "default": "./index.html",
   "scripts": {
-    "start": "parcel serve ./index.html",
+    "start": "parcel ./index.html",
+    "build": "parcel build ./index.html --dist-dir ./dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
