@@ -10,33 +10,85 @@
         <script defer type="module" src="./src/js/main.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg bg-primary">
-            <div class="container-fluid">
-                <span>
-                    <img src="./src/img/icon-lobster2.svg" width="40px" height="40px" fill="white">
-                    <span class="navbar-brand text-white" href="#">LobsterGeneX</span>
+
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-md bg-primary">
+            <div class="container-fluid" id="navbar-content">
+                <span class="">
+                    <!-- https://www.phylopic.org/images/4256e839-f525-47a2-8bb8-fd56f2623cc3/homarus-americanus -->
+                    <img src="./src/img/icon-lobster.svg" width="40px" height="40px" fill="white">
+                    <span class="navbar-brand fs-4 text-white px-2 align-middle" href="#">LobsterGeneX</span>
                 </span>
-                
+                <span class="navbar-brand text-white align-middle float-end">
+                    <a class="text-light" href="https://github.com/Tom-Jenkins/LobsterGeneX" target="_blank"><i class="bi bi-book px-3"></i></a>
+                    <a class="text-light" href="https://github.com/Tom-Jenkins/LobsterGeneX" target="_blank"><i class="bi bi-github px-3"></i></a>
+                    <a class="text-light" href="https://twitter.com/Tom__Jenkins" target="_blank"><i class="bi bi-twitter px-3"></i></a>
+
+                    <!-- INFORMATION MODAL ICON -->
+                    <a class="text-light" href="#" data-bs-toggle="modal" data-bs-target="#infoModal"><i class="bi bi-info-circle px-3"></i></a>
+
+                    <!-- INFORMATION MODAL CONTENT -->
+                    <div class="modal fade text-primary" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fw-bold" id="infoModalLabel">About LobsterGeneX</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-wrap">
+                                <p>
+                                    LobsterGeneX is a web application designed to visualise gene expression results from ten different tissue types from the European lobster (<em>Homarus gammarus</em>).
+                                </p>
+                                <p>
+                                    Tissue types analysed:
+                                    <ul>
+                                        <li>Eye, Gill, Nerve, Muscle, Heart</li>
+                                        <li>Hepatopancreas, Gut</li>
+                                        <li>Ovary, Testes</li>
+                                        <li>Juvenile</li>
+                                    </ul>  
+                                </p>
+                                <p>The results are discussed in the article XXX (Paris <em>et al</em>. 202X).</p>
+                            </div>
+                            <div class="modal-footer d-flex justify-content-center">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </span>
             </div>
         </nav>
-        <div class="container py-4 px-3 mx-auto">
-            <h1>LobsterGeneX replace X with DNA icon!</h1>
-            <button class="btn btn-primary">Primary button</button>
-            <i class="bi bi-airplane-engines-fill"></i>
-            <br><br>
-            <p>
-                Try typing one of "apple", "pinaple", "garlic"
-            </p>
-            <input id="geneSelector" type="text" list="gene-list" placeholder="Search" autocomplete="off"/>
+
+        <!-- DNA LOADING SPINNER -->
+        <div class="DNA_cont position-absolute top-50 start-50 translate-middle" id="dna-spinner">
+            <div class="nucleobase"></div>
+            <div class="nucleobase"></div>
+            <div class="nucleobase"></div>
+            <div class="nucleobase"></div>
+            <div class="nucleobase"></div>
+            <div class="nucleobase"></div>
+            <div class="nucleobase"></div>
+            <div class="nucleobase"></div>
+            <div class="nucleobase"></div>
+            <div class="nucleobase"></div>
+        </div>
+
+        <!-- GENE SELECTION CONTAINER -->
+        <div class="container py-4 px-3 mx-auto hidden" id="gene-selection-container">
+            <h4><strong>Enter Gene ID</strong></h4>
+            <form action="/search">
+                <input id="gene-selector" type="text" list="gene-list" placeholder="Search up to 15,000 genes" autocomplete="off">
+                <input type="reset" value="X" alt="Clear Input Field" data-bs-toggle="tooltip" title="Clear Input Field">
+                <input class="mx-2" id="plot-bttn" type="submit" value="Plot Expression">
+            </form>
             <datalist id="gene-list"></datalist>
-            <button>X</button>
-            <br><br>
-            <input type="file" id="file">
         </div>
-        <!-- ECHARTS EXAMPLE -->
-        <div>
-            
-                
+
+        <!-- ECHARTS CONTAINER -->
+        <div class="container py-2 px-3 mx-auto">
+            <div id="plot" style="width: 100%; height:500px;"></div>
         </div>
+        
     </body>
 </html>
