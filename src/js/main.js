@@ -22,7 +22,7 @@ import {echartsPlot} from "./plotData";
 // ------------------- //
 
 // Gene expression file URL
-const file = "https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/prototype/data/vst_normalised_counts_matrix_3decplace.csv";
+const file = "https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/main/data/vst_normalised_counts_matrix_3decplace.csv";
 
 // 1. Render gene selection text box
 importData(file, renderGeneSelector);
