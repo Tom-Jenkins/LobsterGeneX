@@ -7,23 +7,26 @@
 // Function to create a datalist object
 export function renderGeneSelector (data) {
 
-    // Extract gene names from data
-    const geneNames = data.map( arr => arr.Gene );
+    // Extract gene IDs and names from data
+    const geneIDs = data.map( arr => arr.Gene_ID );
+    const geneNames = data.map( arr => arr.Gene_name );
     // console.log(geneNames);
 
     // Select elements from DOM
     const datalist = document.getElementById("gene-list");
 
-    for (let i = 0; i < geneNames.length; i++) {
+    // Build datalist
+    for (let i = 0; i < geneIDs.length; i++) {
 
         // Create a new option element each iteration 
         const option = document.createElement("option");
         
-        // Add value
-        const value = geneNames[i];
+        // Add HTML content with each option
+        const content = geneNames[i];
     
-        // Example of appended element: <option>value</option>
-        option.value = value;
+        // Example of appended element: <option value="geneName">GeneID</option>
+        option.value = content;
+        option.textContent = geneIDs[i];
         datalist.appendChild(option);
     };
 };

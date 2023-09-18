@@ -28,13 +28,13 @@ export function renderPlot (data) {
     if (geneSelected != ""){
 
         // Extract data for selected gene
-        let selectedGeneIndex = data.map( i => i.Gene).indexOf(geneSelected); 
+        let selectedGeneIndex = data.map( i => i.Gene_name ).indexOf(geneSelected); 
         let selectedGeneData = data[selectedGeneIndex];
         console.log(selectedGeneData);    
 
         // Extract minimum and maximum values (+- 1)
         let allValues = Object.values(selectedGeneData); // extract all expression values from object
-        allValues.shift(); // remove first element in array
+        allValues.splice(0, 3); // remove first three elements in array
         let minValue = (Math.min(...allValues) - 1).toFixed(0);
         let maxValue = (Math.max(...allValues) + 1).toFixed(0);
         console.log(minValue, maxValue);
@@ -170,7 +170,10 @@ export function renderPlot (data) {
 
             // TITLE
             title: {
-                text: `Gene: ${geneSelected}`
+                text: `Gene: ${selectedGeneData.Gene_name}`,
+
+                // Render gene description at the bottom-left of the chart
+                subtext: `Description: ${selectedGeneData.Gene_desc}`,
             },
 
             // LEGEND
@@ -227,7 +230,8 @@ export function renderPlot (data) {
 
             // GRID
             grid: {
-                bottom: "25%"
+                top: "18%", // padding between chart and subtitle
+                bottom: "25%",
             },
 
             // TOOLBOX FEATURES
