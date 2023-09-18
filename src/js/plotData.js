@@ -245,7 +245,7 @@ export function renderPlot (data) {
                         type: "png",
                         name: `${geneSelected}_expression`,
                         title: "Save as PNG",
-                        pixelRatio: 5
+                        pixelRatio: 12
                     }
                 }
             },
