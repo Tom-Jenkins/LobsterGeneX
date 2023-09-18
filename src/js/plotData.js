@@ -12,7 +12,7 @@ const tissues = ["Eye", "Gill", "Nerve", "Muscle", "Heart", "Hepatopancreas", "G
 const customCols = ["#F5EC88","#E4CC75","#F6C578","#DDA643","#C98B4D","#C1D49A","#7F8C63","#2B5B77","#96BED0","#5A5A56"];
 
 // Function to add "none detectable" to values of 2.728 (no detectable change in expression)
-const addNoneDetectable = value => value === "2.73" ? `${value} (None Detectable)` : value;  
+const addNoneDetectable = value => value === "2.73" ? `${value} (None Detectable)` : value;
 
 // Initiate echarts variable
 export let echartsPlot;
@@ -139,13 +139,13 @@ export function renderPlot (data) {
                             <span class="legend-text" style="background-color:${params[0].color}"></span>
                             <span class="fw-bold fs-6">${params[0].name}</span>
                             </br>
-                            <span>Replicate 1: <strong class="px-2">${params[0].value[1].toFixed(2)}</strong></span>
+                            <span>Replicate 1: <strong class="px-2">${addNoneDetectable(params[0].value[1].toFixed(2))}</strong></span>
                             </br>
-                            <span>Replicate 2: <strong class="px-2">${params[1].value[1].toFixed(2)}</strong></span>
+                            <span>Replicate 2: <strong class="px-2">${addNoneDetectable(params[1].value[1].toFixed(2))}</strong></span>
                             </br>
-                            <span>Replicate 3: <strong class="px-2">${params[2].value[1].toFixed(2)}</strong></span>
+                            <span>Replicate 3: <strong class="px-2">${addNoneDetectable(params[2].value[1].toFixed(2))}</strong></span>
                             </br>
-                            <span>Replicate 4: <strong class="px-2">${params[1].value[1].toFixed(2)}</strong></span>
+                            <span>Replicate 4: <strong class="px-2">${addNoneDetectable(params[1].value[1].toFixed(2))}</strong></span>
                         `;
                     };
 
@@ -219,9 +219,10 @@ export function renderPlot (data) {
                 },
                 min: minValue,
                 max: maxValue,
-                // axisLabel: {
-                //     fontFamily: "arial"
-                // }
+                axisLabel: {
+                    fontSize: 15,
+                    // fontFamily: "arial",
+                }
             },
 
             // GRID
