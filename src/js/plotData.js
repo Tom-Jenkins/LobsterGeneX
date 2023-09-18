@@ -114,7 +114,7 @@ export function renderPlot (data) {
                     // Add both boxplot and scatter tooltips when both are selected in legend
                     if (params.length === 5) {
                         tooltipContent += `
-                            <span style="display:inline-block;margin-bottom:1px;margin-right:5px;border-radius:50%;width:10px;height:10px;background-color:${params[0].color}"></span>
+                            <span class="legend-text" style="background-color:${params[0].color}"></span>
                             <span class="fw-bold fs-6">${params[0].name}</span>
                             </br>
                             <span>Replicate 1: <strong class="px-2">${params[1].value[1].toFixed(2)}</strong></span>
@@ -130,7 +130,7 @@ export function renderPlot (data) {
                     // Add only scatter tooltip when boxplot is deselected in legend
                     if (params.length === 4) {
                         tooltipContent += `
-                            <span style="display:inline-block;margin-bottom:1px;margin-right:5px;border-radius:50%;width:10px;height:10px;background-color:${params[0].color}"></span>
+                            <span class="legend-text" style="background-color:${params[0].color}"></span>
                             <span class="fw-bold fs-6">${params[0].name}</span>
                             </br>
                             <span>Replicate 1: <strong class="px-2">${params[0].value[1].toFixed(2)}</strong></span>
@@ -146,7 +146,7 @@ export function renderPlot (data) {
                     // Add only boxplot tooltip when scatter is deselected in legend
                     if (params.length === 1) {
                         tooltipContent += `
-                            <span style="display:inline-block;margin-bottom:1px;margin-right:5px;border-radius:50%;width:10px;height:10px;background-color:${params[0].color}"></span>
+                            <span class="legend-text" style="background-color:${params[0].color}"></span>
                             <span class="fw-bold fs-6">${params[0].name}</span>
                         `;
                     };
@@ -171,7 +171,7 @@ export function renderPlot (data) {
             legend: {
                 show: true,
                 left: "right",
-                formatter: "Toggle {name}",
+                formatter: "{name}",
                 itemStyle: {
                     color: "#2c3e50",
                     opacity: "0.50",
@@ -245,7 +245,6 @@ export function renderPlot (data) {
 
         };
         
-
         // Display the chart using the configuration options
         echartsPlot.setOption(option);
     };
