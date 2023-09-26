@@ -22,24 +22,26 @@ import {echartsPlot} from "./plotData";
 // ------------------- //
 
 // Gene expression file URL
-const file = "https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/main/data/vst_normalised_counts_matrix_3decplace.csv";
+// const file = "https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/main/data/vst_normalised_counts_matrix_3decplace.csv";
+const file = "https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/gene-name-features/data/vst_normalised_counts_matrix_3decplace.csv";
 
 // 1. Render gene selection text box
 importData(file, renderGeneSelector);
 
 // Delay code executation by X seconds so that DNA spinner does not instantly disappear in fast rendering / internet connections
-setTimeout( () => {
+// setTimeout( () => {
 
-    // Deactivate DNA loading spinner when gene selection content has rendered
-    document.getElementById("dna-spinner").classList.add("hidden");
+//     // Deactivate DNA loading spinner when gene selection content has rendered
+//     document.getElementById("dna-spinner").classList.add("hidden");
 
-    // Activate gene selection component when loading is complete
-    document.getElementById("gene-selection-container").classList.remove("hidden");
+//     // Activate gene selection component when loading is complete
+//     document.getElementById("gene-selection-container").classList.remove("hidden");
 
-}, 3000);
+// }, 3000);
 
-// document.getElementById("dna-spinner").classList.add("hidden");
-// document.getElementById("gene-selection-container").classList.remove("hidden");
+// Uncomment when in developer mode
+document.getElementById("dna-spinner").classList.add("hidden");
+document.getElementById("gene-selection-container").classList.remove("hidden");
 
 // 2. Render boxplot when user selects a gene and clicks plot button
 document.getElementById("plot-bttn").addEventListener("click", (e) => {
