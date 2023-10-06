@@ -12,7 +12,7 @@ Description on the typical usage of LobsterGeneX.
 ### Dependencies
 
 - nvm 0.39.3+
-- npm Node.js 17.9.1+
+- node 17.9.1+
 
 One way to install nvm:  
 ```
@@ -37,7 +37,7 @@ Install node package versions from package.json:
 npm install
 ``` 
 
-### Run app in developer mode
+### Start app in developer mode
 
 ```
 npm start
