@@ -11,8 +11,8 @@ import * as echarts from "echarts";
 const tissues = ["Eye", "Gill", "Nerve", "Muscle", "Heart", "Hepatopancreas", "Gut", "Ovary", "Testes", "Juvenile"];
 const customCols = ["#F5EC88","#E4CC75","#F6C578","#DDA643","#C98B4D","#C1D49A","#7F8C63","#2B5B77","#96BED0","#5A5A56"];
 
-// Function to add "none detectable" to values of 2.728 (no detectable change in expression)
-const addNoneDetectable = value => value === "2.73" ? `${value} (None Detectable)` : value;
+// Function to add "none detectable" to values of 2.728 (zero transcript counts, i.e. no detectable change in expression)
+const addNoneDetectable = value => value === "2.73" ? `${value} (Zero Transcripts)` : value;
 
 // Initiate echarts variable
 export let echartsPlot;
@@ -214,9 +214,9 @@ export function renderPlot (data) {
             // YAXIS
             yAxis: {
                 type: "value",
-                name: "Expression (VST normalisation)",
+                name: "Expression\n\n(VST normalisation)",
                 nameLocation: "center",
-                nameGap: 50,
+                nameGap: 30,
                 splitArea: {
                     show: true
                 },
@@ -232,6 +232,7 @@ export function renderPlot (data) {
             grid: {
                 top: "18%", // padding between chart and subtitle
                 bottom: "25%",
+                left: "10%"
             },
 
             // TOOLBOX FEATURES
@@ -242,7 +243,7 @@ export function renderPlot (data) {
                 top: "10%",
                 right: "1%",                
                 feature: {
-                    dataZoom: {},
+                    // dataZoom: {},
                     // dataView: {},
                     // restore: { title: "Reset" },
                     saveAsImage: {
