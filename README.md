@@ -1,11 +1,18 @@
 # LobsterGeneX
 
 ## About
-LobsterGeneX is a web application for enable XYZ.
+LobsterGeneX is a web application designed to visualise gene expression results from ten different tissue types from the European lobster (_Homarus gammarus_).
+
+Tissue types analysed:
+
+* Eye, Gill, Nerve, Muscle, Heart
+* Hepatopancreas, Gut
+* Ovary, Testes
+* Juvenile
+
+Click [here](https://lobstergenex.com/) to launch the application.
 
 ## Usage
-Description on the typical usage of LobsterGeneX.
-
 
 ## Developer
 
