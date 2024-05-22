@@ -11,6 +11,9 @@ import * as echarts from "echarts";
 const tissues = ["Eye", "Gill", "Nerve", "Muscle", "Heart", "Hepatopancreas", "Gut", "Ovary", "Testes", "Juvenile"];
 const customCols = ["#F5EC88","#E4CC75","#F6C578","#DDA643","#C98B4D","#C1D49A","#7F8C63","#2B5B77","#96BED0","#5A5A56"];
 
+// Function to add "none detectable" to values of 2.728 (zero transcript counts, i.e. no detectable change in expression)
+const addNoneDetectable = value => value === "2.73" ? `${value} (Zero Transcripts)` : value;
+
 // Initiate echarts variable
 export let echartsPlot;
 
@@ -25,16 +28,16 @@ export function renderPlot (data) {
     if (geneSelected != ""){
 
         // Extract data for selected gene
-        let selectedGeneIndex = data.map( i => i.Gene).indexOf(geneSelected); 
+        let selectedGeneIndex = data.map( i => i.Gene_ID ).indexOf(geneSelected); 
         let selectedGeneData = data[selectedGeneIndex];
-        console.log(selectedGeneData);
+        // console.log(selectedGeneData);
 
         // Extract minimum and maximum values (+- 1)
         let allValues = Object.values(selectedGeneData); // extract all expression values from object
-        allValues.shift(); // remove first element in array
+        allValues.splice(0, 3); // remove first three elements in array
         let minValue = (Math.min(...allValues) - 1).toFixed(0);
         let maxValue = (Math.max(...allValues) + 1).toFixed(0);
-        console.log(minValue, maxValue);
+        // console.log(minValue, maxValue);
 
         // Initiate echarts instance
         echartsPlot = echarts.init(plotElement);
@@ -108,45 +111,48 @@ export function renderPlot (data) {
                 },
                 formatter: function(params) {
 
+                    // Log to console (developer)
+                    // console.log(addNoneDetectable(params[1].value[1]))
+
                     // HTML content for tooltip
                     let tooltipContent = ``;
 
                     // Add both boxplot and scatter tooltips when both are selected in legend
                     if (params.length === 5) {
                         tooltipContent += `
-                            <span style="display:inline-block;margin-bottom:1px;margin-right:5px;border-radius:50%;width:10px;height:10px;background-color:${params[0].color}"></span>
+                            <span class="legend-text" style="background-color:${params[0].color}"></span>
                             <span class="fw-bold fs-6">${params[0].name}</span>
                             </br>
-                            <span>Replicate 1: <strong class="px-2">${params[1].value[1].toFixed(2)}</strong></span>
+                            <span>Replicate 1: <strong class="px-2">${addNoneDetectable(params[1].value[1].toFixed(2))}</strong></span>
                             </br>
-                            <span>Replicate 2: <strong class="px-2">${params[2].value[1].toFixed(2)}</strong></span>
+                            <span>Replicate 2: <strong class="px-2">${addNoneDetectable(params[2].value[1].toFixed(2))}</strong></span>
                             </br>
-                            <span>Replicate 3: <strong class="px-2">${params[3].value[1].toFixed(2)}</strong></span>
+                            <span>Replicate 3: <strong class="px-2">${addNoneDetectable(params[3].value[1].toFixed(2))}</strong></span>
                             </br>
-                            <span>Replicate 4: <strong class="px-2">${params[4].value[1].toFixed(2)}</strong></span>
+                            <span>Replicate 4: <strong class="px-2">${addNoneDetectable(params[4].value[1].toFixed(2))}</strong></span>
                         `;
                     };
 
                     // Add only scatter tooltip when boxplot is deselected in legend
                     if (params.length === 4) {
                         tooltipContent += `
-                            <span style="display:inline-block;margin-bottom:1px;margin-right:5px;border-radius:50%;width:10px;height:10px;background-color:${params[0].color}"></span>
+                            <span class="legend-text" style="background-color:${params[0].color}"></span>
                             <span class="fw-bold fs-6">${params[0].name}</span>
                             </br>
-                            <span>Replicate 1: <strong class="px-2">${params[0].value[1].toFixed(2)}</strong></span>
+                            <span>Replicate 1: <strong class="px-2">${addNoneDetectable(params[0].value[1].toFixed(2))}</strong></span>
                             </br>
-                            <span>Replicate 2: <strong class="px-2">${params[1].value[1].toFixed(2)}</strong></span>
+                            <span>Replicate 2: <strong class="px-2">${addNoneDetectable(params[1].value[1].toFixed(2))}</strong></span>
                             </br>
-                            <span>Replicate 3: <strong class="px-2">${params[2].value[1].toFixed(2)}</strong></span>
+                            <span>Replicate 3: <strong class="px-2">${addNoneDetectable(params[2].value[1].toFixed(2))}</strong></span>
                             </br>
-                            <span>Replicate 4: <strong class="px-2">${params[1].value[1].toFixed(2)}</strong></span>
+                            <span>Replicate 4: <strong class="px-2">${addNoneDetectable(params[1].value[1].toFixed(2))}</strong></span>
                         `;
                     };
 
                     // Add only boxplot tooltip when scatter is deselected in legend
                     if (params.length === 1) {
                         tooltipContent += `
-                            <span style="display:inline-block;margin-bottom:1px;margin-right:5px;border-radius:50%;width:10px;height:10px;background-color:${params[0].color}"></span>
+                            <span class="legend-text" style="background-color:${params[0].color}"></span>
                             <span class="fw-bold fs-6">${params[0].name}</span>
                         `;
                     };
@@ -164,14 +170,18 @@ export function renderPlot (data) {
 
             // TITLE
             title: {
-                text: `Gene: ${geneSelected}`
+                text: `Gene: ${selectedGeneData.Gene_ID}`,
+                link: `https://metazoa.ensembl.org/Homarus_gammarus_gca958450375v1/Gene/Summary?g=${selectedGeneData.Gene_ID}`,
+
+                // Render gene description at the bottom-left of the chart
+                subtext: `${selectedGeneData.Contig_ID}\n\nNumber of transcripts: ${selectedGeneData.Num_Transcripts}`,
             },
 
             // LEGEND
             legend: {
                 show: true,
                 left: "right",
-                formatter: "Toggle {name}",
+                formatter: "{name}",
                 itemStyle: {
                     color: "#2c3e50",
                     opacity: "0.50",
@@ -205,22 +215,25 @@ export function renderPlot (data) {
             // YAXIS
             yAxis: {
                 type: "value",
-                name: "Expression (VST normalisation)",
+                name: "Expression\n\n(VST normalisation)",
                 nameLocation: "center",
-                nameGap: 50,
+                nameGap: 30,
                 splitArea: {
                     show: true
                 },
                 min: minValue,
                 max: maxValue,
-                // axisLabel: {
-                //     fontFamily: "arial"
-                // }
+                axisLabel: {
+                    fontSize: 15,
+                    // fontFamily: "arial",
+                }
             },
 
             // GRID
             grid: {
-                bottom: "25%"
+                top: "18%", // padding between chart and subtitle
+                bottom: "25%",
+                left: "10%"
             },
 
             // TOOLBOX FEATURES
@@ -231,21 +244,20 @@ export function renderPlot (data) {
                 top: "10%",
                 right: "1%",                
                 feature: {
-                    dataZoom: {},
+                    // dataZoom: {},
                     // dataView: {},
                     // restore: { title: "Reset" },
                     saveAsImage: {
                         type: "png",
                         name: `${geneSelected}_expression`,
                         title: "Save as PNG",
-                        pixelRatio: 5
+                        pixelRatio: 12
                     }
                 }
             },
 
         };
         
-
         // Display the chart using the configuration options
         echartsPlot.setOption(option);
     };

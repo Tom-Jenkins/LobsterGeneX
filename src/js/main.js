@@ -14,7 +14,6 @@ import {renderPlot} from "./plotData";
 import {echartsPlot} from "./plotData";
 
 
-
 // ------------------- //
 //
 // Main App Function
@@ -22,12 +21,13 @@ import {echartsPlot} from "./plotData";
 // ------------------- //
 
 // Gene expression file URL
-const file = "https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/main/data/vst_normalised_counts_matrix_3decplace.csv";
+// const file = "https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/main/data/vst_normalised_counts_matrix_3decplace.csv";
+const file = "https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/gene-name-features/data/vst_normalised_counts_matrix_3decplace_v2.csv";
 
 // 1. Render gene selection text box
 importData(file, renderGeneSelector);
 
-// Delay code executation by X seconds so that DNA spinner does not instantly disappear in fast rendering / internet connections
+// Delay code executation by 3 seconds so that DNA spinner does not instantly disappear in fast rendering / internet connections
 setTimeout( () => {
 
     // Deactivate DNA loading spinner when gene selection content has rendered
@@ -38,6 +38,7 @@ setTimeout( () => {
 
 }, 3000);
 
+// Developer mode only (comment out this code when not in developer mode)
 // document.getElementById("dna-spinner").classList.add("hidden");
 // document.getElementById("gene-selection-container").classList.remove("hidden");
 
@@ -46,7 +47,6 @@ document.getElementById("plot-bttn").addEventListener("click", (e) => {
     e.preventDefault();
     importData(file, renderPlot);
 });
-
 
 
 // ------------------- //
