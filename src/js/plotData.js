@@ -28,16 +28,16 @@ export function renderPlot (data) {
     if (geneSelected != ""){
 
         // Extract data for selected gene
-        let selectedGeneIndex = data.map( i => i.Gene_name ).indexOf(geneSelected); 
+        let selectedGeneIndex = data.map( i => i.Gene_ID ).indexOf(geneSelected); 
         let selectedGeneData = data[selectedGeneIndex];
-        console.log(selectedGeneData);    
+        // console.log(selectedGeneData);
 
         // Extract minimum and maximum values (+- 1)
         let allValues = Object.values(selectedGeneData); // extract all expression values from object
         allValues.splice(0, 3); // remove first three elements in array
         let minValue = (Math.min(...allValues) - 1).toFixed(0);
         let maxValue = (Math.max(...allValues) + 1).toFixed(0);
-        console.log(minValue, maxValue);
+        // console.log(minValue, maxValue);
 
         // Initiate echarts instance
         echartsPlot = echarts.init(plotElement);
