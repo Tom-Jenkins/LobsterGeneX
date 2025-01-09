@@ -278,7 +278,7 @@ export function renderPlot (data) {
                             const completeText = `${header}\n${formattedText}`;
 
                             // Create a textarea element with the formatted text
-                            const textbox = `<textarea style="resize: none; width: 100%; height: 100%;">${completeText}</textarea>`;
+                            const textbox = `<textarea style="resize: none; width: 100%; height: 98.5%;">${completeText}</textarea>`;
                             return textbox;
                             
                         }
