@@ -12,7 +12,7 @@ const tissues = ["Eye", "Gill", "Nerve", "Muscle", "Heart", "Hepatopancreas", "G
 const customCols = ["#F5EC88","#E4CC75","#F6C578","#DDA643","#C98B4D","#C1D49A","#7F8C63","#2B5B77","#96BED0","#5A5A56"];
 
 // Function to add "none detectable" to values of 2.728 (zero transcript counts, i.e. no detectable change in expression)
-const addNoneDetectable = value => value === "2.73" ? `${value} (Zero Transcripts)` : value;
+const addNoneDetectable = value => value === "2.73" ? `${value} (zero transcripts)` : value;
 
 // Initiate echarts variable
 export let echartsPlot;
