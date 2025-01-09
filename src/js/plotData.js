@@ -245,7 +245,44 @@ export function renderPlot (data) {
                 right: "1%",                
                 feature: {
                     // dataZoom: {},
-                    // dataView: {},
+                    dataView: {
+                        show: true,
+                        readOnly: true,
+                        buttonColor: "#00498f",
+                        lang: ["Data View (copy and paste text into spreadsheet software for external use)", "Close"],
+                        optionToContent: function (opt) {
+                            const dataViewData = [
+                                // Format is an array for each set of values
+                                // E.g. for one tissue: [eye1, eye2, eye3, eye4]
+                                [selectedGeneData.eye_1, selectedGeneData.eye_2, selectedGeneData.eye_3, selectedGeneData.eye_4],
+                                [selectedGeneData.gill_1, selectedGeneData.gill_2, selectedGeneData.gill_3, selectedGeneData.gill_4],
+                                [selectedGeneData.nerve_1, selectedGeneData.nerve_2, selectedGeneData.nerve_3, selectedGeneData.nerve_4],
+                                [selectedGeneData.muscle_1, selectedGeneData.muscle_2, selectedGeneData.muscle_3, selectedGeneData.muscle_4],
+                                [selectedGeneData.heart_1, selectedGeneData.heart_2, selectedGeneData.heart_3, selectedGeneData.heart_4],
+                                [selectedGeneData.hepato_1, selectedGeneData.hepato_2, selectedGeneData.hepato_3, selectedGeneData.hepato_4],
+                                [selectedGeneData.gut_1, selectedGeneData.gut_2, selectedGeneData.gut_3, selectedGeneData.gut_4],
+                                [selectedGeneData.ovary_1, selectedGeneData.ovary_2, selectedGeneData.ovary_3, selectedGeneData.ovary_4],
+                                [selectedGeneData.gonad_1, selectedGeneData.gonad_2, selectedGeneData.gonad_3, selectedGeneData.gonad_4],
+                                [selectedGeneData.juv_1, selectedGeneData.juv_2, selectedGeneData.juv_3, selectedGeneData.juv_4],
+                            ]
+
+                            // Header row
+                            const header = "Tissue\tReplicate1\tReplicate2\tReplicate3\tReplicate4";
+
+                            // Format the data for textarea
+                            const formattedText = dataViewData
+                                .map((row, index) => `${tissues[index]}\t${row.join("\t")}`)
+                                .join("\n");
+                            
+                            // Combine header and data
+                            const completeText = `${header}\n${formattedText}`;
+
+                            // Create a textarea element with the formatted text
+                            const textbox = `<textarea style="resize: none; width: 100%; height: 100%;">${completeText}</textarea>`;
+                            return textbox;
+                            
+                        }
+                    },
                     // restore: { title: "Reset" },
                     saveAsImage: {
                         type: "png",
