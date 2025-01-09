@@ -173,13 +173,13 @@ export function renderPlot (data) {
                 text: `Gene: ${selectedGeneData.Gene_ID}`,
                 link: `https://metazoa.ensembl.org/Homarus_gammarus_gca958450375v1/Gene/Summary?g=${selectedGeneData.Gene_ID}`,
 
-                // Render gene description at the bottom-left of the chart
+                // Render gene description at the top-left of the chart
                 subtext: `${selectedGeneData.Contig_ID}\n\nNumber of transcripts: ${selectedGeneData.Num_Transcripts}`,
             },
 
             // LEGEND
             legend: {
-                show: true,
+                show: false,
                 left: "right",
                 formatter: "{name}",
                 itemStyle: {
