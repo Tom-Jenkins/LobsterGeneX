@@ -56,5 +56,5 @@ document.getElementById("plot-bttn").addEventListener("click", (e) => {
 
 // Resize ECharts plot when screen size changes
 window.onresize = function() {
-    echartsPlot.resize();
+    if(echartsPlot) echartsPlot.resize();
 };
