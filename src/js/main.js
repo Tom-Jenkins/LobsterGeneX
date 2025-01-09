@@ -8,10 +8,10 @@
 import * as bootstrap from "bootstrap";
 
 // Import JS functions from modules
-import {importData} from "./importData";
-import {renderGeneSelector} from "./geneSelector";
-import {renderPlot} from "./plotData";
-import {echartsPlot} from "./plotData";
+import { importData } from "./importData";
+import { renderGeneSelector } from "./geneSelector";
+import { renderPlot } from "./plotData";
+import { echartsPlot } from "./plotData";
 
 
 // ------------------- //
