@@ -32,11 +32,11 @@ export function renderPlot (data) {
         let selectedGeneData = data[selectedGeneIndex];
         // console.log(selectedGeneData);
 
-        // Extract minimum and maximum values (+- 1)
+        // Extract minimum and maximum values
         let allValues = Object.values(selectedGeneData); // extract all expression values from object
         allValues.splice(0, 3); // remove first three elements in array
-        let minValue = (Math.min(...allValues) - 1).toFixed(0);
-        let maxValue = (Math.max(...allValues) + 1).toFixed(0);
+        let minValue = (Math.min(...allValues)).toFixed(0);
+        let maxValue = (Math.max(...allValues)).toFixed(0);
         // console.log(minValue, maxValue);
 
         // Initiate echarts instance
@@ -221,10 +221,10 @@ export function renderPlot (data) {
                 splitArea: {
                     show: true
                 },
-                min: "dataMin",
-                max: "dataMax",
-                // min: minValue,
-                // max: maxValue,
+                // min: "dataMin",
+                // max: "dataMax",
+                min: minValue,
+                max: maxValue,
                 axisLabel: {
                     fontSize: 15,
                     // fontFamily: "arial",
