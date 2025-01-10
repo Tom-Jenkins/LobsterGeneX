@@ -123,13 +123,13 @@ export function renderPlot (data) {
                             <span class="legend-text" style="background-color:${params[0].color}"></span>
                             <span class="fw-bold fs-6">${params[0].name}</span>
                             </br>
-                            <span>Replicate 1: <strong class="px-2">${addNoneDetectable(params[1].value[1].toFixed(2))}</strong></span>
+                            <span>Replicate 1: <strong class="px-2">${addNoneDetectable(params[1].value[1].toFixed(0))}</strong></span>
                             </br>
-                            <span>Replicate 2: <strong class="px-2">${addNoneDetectable(params[2].value[1].toFixed(2))}</strong></span>
+                            <span>Replicate 2: <strong class="px-2">${addNoneDetectable(params[2].value[1].toFixed(0))}</strong></span>
                             </br>
-                            <span>Replicate 3: <strong class="px-2">${addNoneDetectable(params[3].value[1].toFixed(2))}</strong></span>
+                            <span>Replicate 3: <strong class="px-2">${addNoneDetectable(params[3].value[1].toFixed(0))}</strong></span>
                             </br>
-                            <span>Replicate 4: <strong class="px-2">${addNoneDetectable(params[4].value[1].toFixed(2))}</strong></span>
+                            <span>Replicate 4: <strong class="px-2">${addNoneDetectable(params[4].value[1].toFixed(0))}</strong></span>
                         `;
                     };
 
@@ -139,13 +139,13 @@ export function renderPlot (data) {
                             <span class="legend-text" style="background-color:${params[0].color}"></span>
                             <span class="fw-bold fs-6">${params[0].name}</span>
                             </br>
-                            <span>Replicate 1: <strong class="px-2">${addNoneDetectable(params[0].value[1].toFixed(2))}</strong></span>
+                            <span>Replicate 1: <strong class="px-2">${addNoneDetectable(params[0].value[1].toFixed(0))}</strong></span>
                             </br>
-                            <span>Replicate 2: <strong class="px-2">${addNoneDetectable(params[1].value[1].toFixed(2))}</strong></span>
+                            <span>Replicate 2: <strong class="px-2">${addNoneDetectable(params[1].value[1].toFixed(0))}</strong></span>
                             </br>
-                            <span>Replicate 3: <strong class="px-2">${addNoneDetectable(params[2].value[1].toFixed(2))}</strong></span>
+                            <span>Replicate 3: <strong class="px-2">${addNoneDetectable(params[2].value[1].toFixed(0))}</strong></span>
                             </br>
-                            <span>Replicate 4: <strong class="px-2">${addNoneDetectable(params[1].value[1].toFixed(2))}</strong></span>
+                            <span>Replicate 4: <strong class="px-2">${addNoneDetectable(params[1].value[1].toFixed(0))}</strong></span>
                         `;
                     };
 
@@ -215,14 +215,16 @@ export function renderPlot (data) {
             // YAXIS
             yAxis: {
                 type: "value",
-                name: "Expression\n\n(VST normalisation)",
+                name: "Expression (normalised counts)",
                 nameLocation: "center",
-                nameGap: 30,
+                nameGap: 60,
                 splitArea: {
                     show: true
                 },
-                min: minValue,
-                max: maxValue,
+                min: "dataMin",
+                max: "dataMax",
+                // min: minValue,
+                // max: maxValue,
                 axisLabel: {
                     fontSize: 15,
                     // fontFamily: "arial",
@@ -233,7 +235,7 @@ export function renderPlot (data) {
             grid: {
                 top: "18%", // padding between chart and subtitle
                 bottom: "25%",
-                left: "10%"
+                left: "15%"
             },
 
             // TOOLBOX FEATURES
