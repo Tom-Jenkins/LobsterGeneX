@@ -39,8 +39,11 @@ export function renderPlot (data) {
         let maxValue = (Math.max(...allValues)).toFixed(0);
         // console.log(minValue, maxValue);
 
-        // Initiate echarts instance
-        echartsPlot = echarts.init(plotElement);
+        // Check if echartsPlot is already initialized
+        if (!echartsPlot) {
+            // Initiate echarts instance
+            echartsPlot = echarts.init(plotElement);
+        };
 
         // Specify the configuration items and data for the chart
         const option = {
