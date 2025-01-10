@@ -177,7 +177,7 @@ export function renderPlot (data) {
                 link: `https://metazoa.ensembl.org/Homarus_gammarus_gca958450375v1/Gene/Summary?g=${selectedGeneData.Gene_ID}`,
 
                 // Render gene description at the top-left of the chart
-                subtext: `${selectedGeneData.Contig_ID}\n\nNumber of transcripts: ${selectedGeneData.Num_Transcripts}`,
+                subtext: `Number of transcripts: ${selectedGeneData.Num_Transcripts}\n\n${selectedGeneData.Contig_ID}`,
             },
 
             // LEGEND
@@ -219,11 +219,11 @@ export function renderPlot (data) {
             yAxis: {
                 type: "value",
                 name: "Expression (normalised counts)",
-                nameLocation: "center",
-                nameGap: 60,
-                splitArea: {
-                    show: true
-                },
+                // nameLocation: "start",
+                // nameGap: 60,
+                // splitArea: {
+                //     show: true
+                // },
                 // min: "dataMin",
                 // max: "dataMax",
                 min: minValue,
@@ -231,14 +231,19 @@ export function renderPlot (data) {
                 axisLabel: {
                     fontSize: 15,
                     // fontFamily: "arial",
+                },
+                nameTextStyle: {
+                    fontSize: 12,
+                    align: "left",
                 }
             },
 
             // GRID
             grid: {
-                top: "18%", // padding between chart and subtitle
+                top: "22%", // padding between chart and subtitle
                 bottom: "25%",
-                left: "15%"
+                left: "15%",
+                // containLabel: true
             },
 
             // TOOLBOX FEATURES
