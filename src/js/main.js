@@ -21,7 +21,7 @@ import { echartsPlot } from "./plotData";
 // ------------------- //
 
 // Gene expression file URL
-const file = "https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/main/data/protein_coding_expression_VST_counts.csv";
+const file = "https://raw.githubusercontent.com/Tom-Jenkins/LobsterGeneX/main/data/protein_coding_expression_normalised_counts.csv";
 
 // 1. Render gene selection text box
 importData(file, renderGeneSelector);
