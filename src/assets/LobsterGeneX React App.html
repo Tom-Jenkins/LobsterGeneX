@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://localhost:5173/search? -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="module">
+import RefreshRuntime from "/@react-refresh"
+RefreshRuntime.injectIntoGlobalHook(window)
+window.$RefreshReg$ = () => {}
+window.$RefreshSig$ = () => (type) => type
+window.__vite_plugin_react_preamble_installed__ = true
+</script>
+
+    <script type="module" src="./LobsterGeneX React App_files/client"></script>
+
+    
+    <link rel="icon" type="image/svg+xml" href="http://localhost:5173/icon-lobster-black.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LobsterGeneX React App</title>
+  <style type="text/css" data-vite-dev-id="C:/Users/tj311/LobsterGeneX/src/index.css">*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* 
+Browser default font size is usually 16px.
+This sets the base font size to a % of the default.
+This font size defines the value of 1rem, as rem units are relative to the root <html> element.
+1rem = 10px, 10px/16px = 62.5%
+*/
+
+html {
+    font-size : 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Trebuchet MS", sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.geneselection__container {
+    padding: 2.5rem;
+}
+
+.geneselection__title {
+    font-size: 2.5rem;
+    margin-bottom: .5rem;
+}
+
+.geneselection__form {
+    display: flex;
+    gap: 1rem;
+    height: 100%
+}
+
+.geneselection__form input {
+    font-size: 2rem;
+    padding: .5rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: var(--navbar-height);
+    width: 100%;
+    background-color: var(--colour-primary);
+    padding: 0 2rem;
+}
+
+.navbar__title {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+
+    font-size: 2.5rem;
+    letter-spacing: .3rem;
+    color: var(--colour-white);
+
+    &:hover {
+        color: var(--colour-secondary);
+    }
+}
+
+.navbar__title--icon {
+    height: 35px;
+    width: auto;
+}
+
+.navbar__icons--container {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+
+    & > a {
+        display: inherit;
+    }
+}
+
+.navbar__icons {
+    height: 25px;
+    width: auto;
+}
+
+:root {
+    --navbar-height: 55px;
+
+    --colour-primary: #00498f;
+    --colour-secondary: #77f7f7;
+
+    --colour-white: #FDFDFD;
+    --colour-black: #2c2c2c;
+}
+</style></head>
+  <body>
+    <div id="root"><nav class="navbar"><div class="navbar__title"><img class="navbar__title--icon" alt="lobster icon" src="./LobsterGeneX React App_files/icon-lobster.svg"><a href="https://www.lobstergenex.com/">LobsterGeneX</a></div><div class="navbar__icons--container"><a href="http://localhost:5173/search?#"><img class="navbar__icons" alt="information icon" src="data:image/svg+xml,%3csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20width=&#39;16&#39;%20height=&#39;16&#39;%20fill=&#39;%23FDFDFD&#39;%20class=&#39;bi%20bi-info-circle&#39;%20viewBox=&#39;0%200%2016%2016&#39;%3e%3cpath%20d=&#39;M8%2015A7%207%200%201%201%208%201a7%207%200%200%201%200%2014m0%201A8%208%200%201%200%208%200a8%208%200%200%200%200%2016&#39;/%3e%3cpath%20d=&#39;m8.93%206.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738%203.468c-.194.897.105%201.319.808%201.319.545%200%201.178-.252%201.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275%200-.375-.193-.304-.533zM9%204.5a1%201%200%201%201-2%200%201%201%200%200%201%202%200&#39;/%3e%3c/svg%3e"></a><a href="http://localhost:5173/search?#"><img class="navbar__icons" alt="book icon" src="data:image/svg+xml,%3csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20width=&#39;16&#39;%20height=&#39;16&#39;%20fill=&#39;%23FDFDFD&#39;%20class=&#39;bi%20bi-book&#39;%20viewBox=&#39;0%200%2016%2016&#39;%3e%3cpath%20d=&#39;M1%202.828c.885-.37%202.154-.769%203.388-.893%201.33-.134%202.458.063%203.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689%201.782-.886%203.112-.752%201.234.124%202.503.523%203.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8%201.783C7.015.936%205.587.81%204.287.94c-1.514.153-3.042.672-3.994%201.105A.5.5%200%200%200%200%202.5v11a.5.5%200%200%200%20.707.455c.882-.4%202.303-.881%203.68-1.02%201.409-.142%202.59.087%203.223.877a.5.5%200%200%200%20.78%200c.633-.79%201.814-1.019%203.222-.877%201.378.139%202.8.62%203.681%201.02A.5.5%200%200%200%2016%2013.5v-11a.5.5%200%200%200-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809%208.985.936%208%201.783&#39;/%3e%3c/svg%3e"></a><a href="http://localhost:5173/search?#"><img class="navbar__icons" alt="github icon" src="data:image/svg+xml,%3csvg%20xmlns=&#39;http://www.w3.org/2000/svg&#39;%20width=&#39;16&#39;%20height=&#39;16&#39;%20fill=&#39;%23FDFDFD&#39;%20class=&#39;bi%20bi-github&#39;%20viewBox=&#39;0%200%2016%2016&#39;%3e%3cpath%20d=&#39;M8%200C3.58%200%200%203.58%200%208c0%203.54%202.29%206.53%205.47%207.59.4.07.55-.17.55-.38%200-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01%201.08.58%201.23.82.72%201.21%201.87.87%202.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95%200-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12%200%200%20.67-.21%202.2.82.64-.18%201.32-.27%202-.27s1.36.09%202%20.27c1.53-1.04%202.2-.82%202.2-.82.44%201.1.16%201.92.08%202.12.51.56.82%201.27.82%202.15%200%203.07-1.87%203.75-3.65%203.95.29.25.54.73.54%201.48%200%201.07-.01%201.93-.01%202.2%200%20.21.15.46.55.38A8.01%208.01%200%200%200%2016%208c0-4.42-3.58-8-8-8&#39;/%3e%3c/svg%3e"></a></div></nav><div class="geneselection__container"><h4 class="geneselection__title">Enter Gene ID</h4><form action="http://localhost:5173/search" class="geneselection__form"><input list="gene-list" placeholder="Search up to 23,223 genes" autocomplete="off" type="text"><input type="reset" value="Clear"><input type="submit" value="Plot Expression"></form><datalist id="gene-list"></datalist></div><div class="chart" style="
+    height: 100%;
+    width: 100%;
+"></div></div>
+    <script type="module" src="./LobsterGeneX React App_files/main.jsx"></script>
+  
+
+</body></html>

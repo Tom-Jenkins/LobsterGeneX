@@ -1,0 +1,23 @@
+.geneselection__container {
+    padding: 0 2.5rem;
+}
+
+.geneselection__title {
+    font-size: 2.5rem;
+    margin-bottom: .5rem;
+}
+
+.geneselection__form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.geneselection__form input {
+    font-size: 2rem;
+    padding: .5rem;
+}
+
+.geneselection__form input[type="text"] {
+    width: 30rem;
+}

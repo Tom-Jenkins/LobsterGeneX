@@ -1,0 +1,37 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* 
+Browser default font size is usually 16px.
+This sets the base font size to a % of the default.
+This font size defines the value of 1rem, as rem units are relative to the root <html> element.
+1rem = 10px, 10px/16px = 62.5%
+*/
+
+html {
+    font-size : 62.5%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size : 50%;
+        box-sizing: border-box;
+        /* scrollbar-gutter: stable; */
+    }
+}
+
+body {
+    font-family: "Trebuchet MS", sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

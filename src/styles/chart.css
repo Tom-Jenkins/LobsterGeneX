@@ -1,0 +1,5 @@
+.chart__container {
+    flex-grow: 1;
+    overflow: hidden;
+    background-color: var(--colour-secondary);
+}
