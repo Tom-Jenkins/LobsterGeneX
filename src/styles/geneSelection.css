@@ -3,7 +3,7 @@
 }
 
 .geneselection__title {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     margin-bottom: .5rem;
 }
 
@@ -20,4 +20,9 @@
 
 .geneselection__form input[type="text"] {
     width: 30rem;
+}
+
+/* Remove down arrow in datalist */
+input::-webkit-calendar-picker-indicator {
+  display: none !important;
 }

@@ -1,4 +1,17 @@
-export default function GeneSelection() {
+import { useRef } from "react";
+// import Datalist from "./Datalist";
+
+export default function GeneSelection({ data, children }) {
+    
+    // const [gene, setGene] = useState("");
+    // const gene = useRef("");
+    // const inputRef = useRef(null);
+    
+    // Extract gene IDs and scaffold from data
+    const mainIDs = useRef(data.map( arr => arr.Gene_ID ));
+    const secondaryIDs = useRef(data.map( arr => arr.Contig_ID ));
+    
+    console.log("RENDER")
 
     return(
         <div className="geneselection__container">
@@ -6,13 +19,16 @@ export default function GeneSelection() {
             <h4 className="geneselection__title">Enter Gene ID</h4>
 
             <form action="/search" className="geneselection__form">
-                <input type="text" list="gene-list" placeholder="Search up to 23,223 genes" autoComplete="off" />
-                <input type="reset" value="Clear" />
-                <input type="submit" value="Plot Expression" onClick={(e) => e.preventDefault()} />
+                {children}
             </form>
 
             <datalist id="gene-list">
-                <option value="Value">Text</option>
+                {
+                // Map each gene name and scaffold name to option tags
+                // E.g. <option value="mainIDs">secondaryIDs</option>
+                mainIDs.current.map((id, index) => (
+                    <option key={id} value={id}>{secondaryIDs.current[index]}</option>
+                ))}
             </datalist>
 
         </div>
