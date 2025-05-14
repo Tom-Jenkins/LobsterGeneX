@@ -2,7 +2,14 @@
     flex-grow: 1;
     overflow: hidden;
     margin-top: 1rem;
+    padding: 0 2.5rem;
     /* background-color: var(--colour-secondary); */
+}
+
+@media (max-width: 768px) {
+    .chart__container {
+        padding: 0;
+    }
 }
 
 /* Data view title */
