@@ -7,9 +7,12 @@ export default function ECharts({ geneData }) {
     // Guard clause if no data is parsed
     if (!geneData.Gene_ID) return null;
 
+    // Condition height for mobiles and larger screens
+    const chartHeight = window.innerWidth > 768 ? "100%" : "550px";
+
     return <ReactECharts 
         option={option(geneData)}
-        style={{height: "550px", width: "100%"}}
+        style={{height: chartHeight, width: "100%"}}
         className="echarts-for-react"
     />
 }

@@ -29,10 +29,10 @@ export default function App() {
                 secondaryIDs = results.data.map( arr => arr.Contig_ID );
 
                 // Update state
-                setTimeout(() => {
+                // setTimeout(() => {
                     setData(results.data);
                     setLoading(false);
-                }, 2000)         
+                // }, 2000)         
             }
         });
     }, []);
@@ -64,9 +64,12 @@ export default function App() {
 
     // Only show spinner during loading
     if (loading) return <Spinner />
+
+    // Condition height for mobiles and larger screens
+    const containerHeight = window.innerWidth > 768 ? "100vh" : "auto";
   
     return (
-        <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "2rem", height: containerHeight }}>
             <NavBar />
             {/* Gene Selection */}
             {data &&
