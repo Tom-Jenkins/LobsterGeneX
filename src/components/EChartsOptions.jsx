@@ -144,6 +144,9 @@ export default function option (geneData) {
         title: {
             text: `Gene: ${geneData.Gene_ID}`,
             link: `https://metazoa.ensembl.org/Homarus_gammarus_gca958450375v1/Gene/Summary?g=${geneData.Gene_ID}`,
+            // textStyle: {
+            //     color: "#00498f",
+            // },
 
             // Render gene description at the top-left of the chart
             subtext: `Number of transcripts: ${geneData.Num_Transcripts}\n\n${geneData.Contig_ID}`,
