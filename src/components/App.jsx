@@ -29,10 +29,10 @@ export default function App() {
                 secondaryIDs = results.data.map( arr => arr.Contig_ID );
 
                 // Update state
-                // setTimeout(() => {
+                setTimeout(() => {
                     setData(results.data);
                     setLoading(false);
-                // }, 2000)                
+                }, 2000)         
             }
         });
     }, []);
