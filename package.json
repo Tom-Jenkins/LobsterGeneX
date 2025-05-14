@@ -12,7 +12,6 @@
   "dependencies": {
     "echarts": "^5.6.0",
     "echarts-for-react": "^3.0.2",
-    "lodash": "^4.17.21",
     "papaparse": "^5.5.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

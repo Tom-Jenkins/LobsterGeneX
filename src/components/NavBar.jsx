@@ -20,7 +20,7 @@ export default function NavBar() {
     <nav style={navbar}>
         <div className="navbar__title">
             <img className="navbar__title--icon" src={icon} alt="lobster icon" />
-                <a href="#">LobsterGeneX</a>
+            <a href="#">LobsterGeneX</a>
             </div>
 
             <div className="navbar__icons--container">

@@ -1,6 +1,7 @@
 import NavBar from "./NavBar";
 import GeneSelection from "./GeneSelection";
 import ECharts from "./ECharts";
+import Spinner from "./Spinner";
 import Papa from "papaparse";
 import { useEffect, useRef, useState } from "react";
 
@@ -11,6 +12,7 @@ export default function App() {
 
     const [data, setData] = useState(null);
     const [geneData, setgeneData] = useState({});
+    const [loading, setLoading] = useState(true);
     const gene = useRef("");
     const inputRef = useRef(null);
     
@@ -22,12 +24,15 @@ export default function App() {
             header: true,
             download: true,
             complete: function(results) {
-                // Update state
-                setData(results.data);
-
                 // Set gene ID and scaffold ID props
                 mainIDs = results.data.map( arr => arr.Gene_ID );
                 secondaryIDs = results.data.map( arr => arr.Contig_ID );
+
+                // Update state
+                // setTimeout(() => {
+                    setData(results.data);
+                    setLoading(false);
+                // }, 2000)                
             }
         });
     }, []);
@@ -56,6 +61,9 @@ export default function App() {
             setgeneData(geneData);
         }  
     }
+
+    // Only show spinner during loading
+    if (loading) return <Spinner />
   
     return (
         <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
