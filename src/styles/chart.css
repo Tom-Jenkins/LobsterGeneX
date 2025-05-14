@@ -1,6 +1,7 @@
 .chart__container {
     flex-grow: 1;
     overflow: hidden;
+    margin-top: 1rem;
     /* background-color: var(--colour-secondary); */
 }
 

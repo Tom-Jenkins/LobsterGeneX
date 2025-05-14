@@ -20,17 +20,17 @@ export default function NavBar() {
     <nav style={navbar}>
         <div className="navbar__title">
             <img className="navbar__title--icon" src={icon} alt="lobster icon" />
-            <a href="#">LobsterGeneX</a>
+            <a href="https://www.lobstergenex.com/">LobsterGeneX</a>
             </div>
 
             <div className="navbar__icons--container">
             <a href="#">
                 <img className="navbar__icons" src={infoCircle} alt="information icon" />
             </a>
-            <a href="#">
+            <a href="https://metazoa.ensembl.org/Homarus_gammarus_gca958450375v1/Info/Index">
                 <img className="navbar__icons" src={book} alt="book icon" />
             </a>
-            <a href="#">
+            <a href="https://github.com/Tom-Jenkins/LobsterGeneX">
                 <img className="navbar__icons" src={github} alt="github icon" />
             </a>
         </div>
