@@ -1,0 +1,21 @@
+.chart__container {
+    flex-grow: 1;
+    overflow: hidden;
+    margin-top: 1rem;
+    /* background-color: var(--colour-secondary); */
+}
+
+/* Data view title */
+.chart__container > div > div > h4 {
+    font-size: 2rem;
+}
+
+/* Close button */
+.chart__container > div > div:nth-child(3) > div:nth-child(3) > div {
+    font-size: 1.7rem !important;
+    font-family: inherit;
+    &:hover {
+        background-color: var(--colour-secondary) !important;
+        color: var(--colour-black) !important;
+    }
+}

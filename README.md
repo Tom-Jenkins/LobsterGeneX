@@ -1,51 +1,12 @@
-# LobsterGeneX
+# React + Vite
 
-## About
-LobsterGeneX is a web application designed to visualise gene expression results from ten different tissue types from the European lobster (_Homarus gammarus_).
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Tissue types analysed:
+Currently, two official plugins are available:
 
-* Eye, Gill, Nerve, Muscle, Heart
-* Hepatopancreas, Gut
-* Ovary, Testes
-* Juvenile
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Click [here](https://lobstergenex.com/) to launch the application.
+## Expanding the ESLint configuration
 
-## Usage
-
-## Developer
-
-### Dependencies
-
-- nvm 0.39.3+
-- node 17.9.1+
-
-One way to install nvm:  
-```
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.39.3/install.sh | bash
-```
-
-One way to install node:  
-```
-nvm install 17.9.1
-```
-
-### Setup environment
-
-Clone repo: 
-```
-git clone https://github.com/Tom-Jenkins/LobsterGeneX.git
-cd LobsterGeneX/
-```
-
-Install node package versions from package.json:  
-```
-npm install
-``` 
-
-### Start app in developer mode
-
-```
-npm start
-```
+If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
