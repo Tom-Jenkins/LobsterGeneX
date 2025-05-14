@@ -1,13 +1,16 @@
 import NavBar from "./NavBar";
 import GeneSelection from "./GeneSelection";
-import Chart from "./Chart";
+import ECharts from "./ECharts";
 import Papa from "papaparse";
 import { useEffect, useRef, useState } from "react";
+
+// Variables to store gene IDs and scaffold IDs
+let mainIDs, secondaryIDs;
 
 export default function App() {
 
     const [data, setData] = useState(null);
-    // const [gene, setGene] = useState("");
+    const [geneData, setgeneData] = useState({});
     const gene = useRef("");
     const inputRef = useRef(null);
     
@@ -19,8 +22,12 @@ export default function App() {
             header: true,
             download: true,
             complete: function(results) {
-                // Update data state
+                // Update state
                 setData(results.data);
+
+                // Set gene ID and scaffold ID props
+                mainIDs = results.data.map( arr => arr.Gene_ID );
+                secondaryIDs = results.data.map( arr => arr.Contig_ID );
             }
         });
     }, []);
@@ -40,10 +47,14 @@ export default function App() {
         }
     }
 
-    // Plot chart
+    // Set Echarts data for selected gene and render on click
     function handlePlotExpression(e) {
         e.preventDefault();
-        console.log(gene);
+        if (gene.current !== "") {
+            const geneIdx = data.map(i => i.Gene_ID).indexOf(gene.current);
+            const geneData = data[geneIdx];
+            setgeneData(geneData);
+        }  
     }
   
     return (
@@ -51,7 +62,8 @@ export default function App() {
             <NavBar />
             {/* Gene Selection */}
             {data &&
-                <GeneSelection data={data}>
+                <GeneSelection mainIDs={mainIDs} secondaryIDs={secondaryIDs}>
+                    {/* Children */}
                     <input 
                         ref={inputRef}
                         defaultValue=""
@@ -68,8 +80,11 @@ export default function App() {
                     />
                 </GeneSelection>
             }
-            {/* Chart */}
-            {data && <Chart data={data} gene={gene} />}
+            {/* ECharts */}
+            <div className="chart__container">
+                {geneData && <ECharts geneData={geneData} />}
+            </div>
+            
         </div>
     );
 }

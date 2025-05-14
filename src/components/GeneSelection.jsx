@@ -1,15 +1,15 @@
-import { useRef } from "react";
+// import { useRef } from "react";
 // import Datalist from "./Datalist";
 
-export default function GeneSelection({ data, children }) {
+export default function GeneSelection({ mainIDs, secondaryIDs, children }) {
     
     // const [gene, setGene] = useState("");
     // const gene = useRef("");
     // const inputRef = useRef(null);
     
     // Extract gene IDs and scaffold from data
-    const mainIDs = useRef(data.map( arr => arr.Gene_ID ));
-    const secondaryIDs = useRef(data.map( arr => arr.Contig_ID ));
+    // const mainIDs = useRef(data.map( arr => arr.Gene_ID ));
+    // const secondaryIDs = useRef(data.map( arr => arr.Contig_ID ));
     
     console.log("RENDER")
 
@@ -26,8 +26,8 @@ export default function GeneSelection({ data, children }) {
                 {
                 // Map each gene name and scaffold name to option tags
                 // E.g. <option value="mainIDs">secondaryIDs</option>
-                mainIDs.current.map((id, index) => (
-                    <option key={id} value={id}>{secondaryIDs.current[index]}</option>
+                mainIDs.map((id, index) => (
+                    <option key={id} value={id}>{secondaryIDs[index]}</option>
                 ))}
             </datalist>
 
