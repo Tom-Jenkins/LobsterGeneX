@@ -93,15 +93,15 @@ export default function option (geneData) {
                 if (params.length === 5) {
                     tooltipContent += `
                         <span class="legend-text" style="background-color:${params[0].color}"></span>
-                        <span class="fw-bold fs-6">${params[0].name}</span>
+                        <span><strong>${params[0].name}</strong></span>
                         </br>
-                        <span>Replicate 1: <strong class="px-2">${addNoneDetectable(params[1].value[1].toFixed(0))}</strong></span>
+                        <span>Replicate 1: <strong>${addNoneDetectable(params[1].value[1].toFixed(0))}</strong></span>
                         </br>
-                        <span>Replicate 2: <strong class="px-2">${addNoneDetectable(params[2].value[1].toFixed(0))}</strong></span>
+                        <span>Replicate 2: <strong>${addNoneDetectable(params[2].value[1].toFixed(0))}</strong></span>
                         </br>
-                        <span>Replicate 3: <strong class="px-2">${addNoneDetectable(params[3].value[1].toFixed(0))}</strong></span>
+                        <span>Replicate 3: <strong>${addNoneDetectable(params[3].value[1].toFixed(0))}</strong></span>
                         </br>
-                        <span>Replicate 4: <strong class="px-2">${addNoneDetectable(params[4].value[1].toFixed(0))}</strong></span>
+                        <span>Replicate 4: <strong>${addNoneDetectable(params[4].value[1].toFixed(0))}</strong></span>
                     `;
                 };
 
@@ -109,15 +109,15 @@ export default function option (geneData) {
                 if (params.length === 4) {
                     tooltipContent += `
                         <span class="legend-text" style="background-color:${params[0].color}"></span>
-                        <span class="fw-bold fs-6">${params[0].name}</span>
+                        <span><strong>${params[0].name}</strong></span>
                         </br>
-                        <span>Replicate 1: <strong class="px-2">${addNoneDetectable(params[0].value[1].toFixed(0))}</strong></span>
+                        <span>Replicate 1: <strong>${addNoneDetectable(params[0].value[1].toFixed(0))}</strong></span>
                         </br>
-                        <span>Replicate 2: <strong class="px-2">${addNoneDetectable(params[1].value[1].toFixed(0))}</strong></span>
+                        <span>Replicate 2: <strong>${addNoneDetectable(params[1].value[1].toFixed(0))}</strong></span>
                         </br>
-                        <span>Replicate 3: <strong class="px-2">${addNoneDetectable(params[2].value[1].toFixed(0))}</strong></span>
+                        <span>Replicate 3: <strong>${addNoneDetectable(params[2].value[1].toFixed(0))}</strong></span>
                         </br>
-                        <span>Replicate 4: <strong class="px-2">${addNoneDetectable(params[1].value[1].toFixed(0))}</strong></span>
+                        <span>Replicate 4: <strong>${addNoneDetectable(params[1].value[1].toFixed(0))}</strong></span>
                     `;
                 };
 
@@ -125,7 +125,7 @@ export default function option (geneData) {
                 if (params.length === 1) {
                     tooltipContent += `
                         <span class="legend-text" style="background-color:${params[0].color}"></span>
-                        <span class="fw-bold fs-6">${params[0].name}</span>
+                        <span><strong>${params[0].name}</strong></span>
                     `;
                 };
 

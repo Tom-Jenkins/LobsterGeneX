@@ -26,3 +26,12 @@
         color: var(--colour-black) !important;
     }
 }
+
+.legend-text {
+    display: inline-block;
+    margin-bottom: 1px;
+    margin-right: 5px;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
