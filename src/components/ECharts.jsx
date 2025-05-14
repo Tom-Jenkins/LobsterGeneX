@@ -13,7 +13,7 @@ export default function ECharts({ geneData }) {
 
     return <ReactECharts 
         option={option(geneData)}
-        style={{height: "100%", width: "100%"}}
+        style={{height: "550px", width: "100%"}}
         className="echarts-for-react"
     />
 

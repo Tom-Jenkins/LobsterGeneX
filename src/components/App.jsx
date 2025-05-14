@@ -16,7 +16,7 @@ export default function App() {
     
     // Parse CSV data from public folder once on first render with useEffect hook
     useEffect(function() {
-        Papa.parse("/protein_coding_expression_VST_counts.csv", {
+        Papa.parse("/protein_coding_expression_normalised_counts.csv", {
             skipEmptyLines: true,
             dynamicTyping: true,
             header: true,
@@ -58,7 +58,7 @@ export default function App() {
     }
   
     return (
-        <div style={{ display: "flex", flexDirection: "column", gap: "2rem", height: "100vh" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
             <NavBar />
             {/* Gene Selection */}
             {data &&

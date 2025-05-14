@@ -6,31 +6,13 @@ const customCols = ["#F5EC88","#E4CC75","#F6C578","#DDA643","#C98B4D","#C1D49A",
 const addNoneDetectable = value => value === "4.54" ? `${value} (zero transcripts)` : value;
 
 // Chart options
-// const option = {
-//     title: {
-//         text: 'Basic Bar Chart'
-//     },
-//     tooltip: {},
-//     xAxis: {
-//         data: ['Category A', 'Category B', 'Category C', 'Category D']
-//     },
-//     yAxis: {},
-//     series: [{
-//         type: 'bar',
-//         data: [5, 20, 36, 10]
-//     }]
-// };
-
-// export default option;
-
-// Chart options
 export default function option (geneData) {
 
     // Extract minimum and maximum values
-    let allValues = Object.values(geneData); // extract all expression values from object
+    const allValues = Object.values(geneData); // extract all expression values from object
     allValues.splice(0, 3); // remove first three elements in array
-    let minValue = (Math.min(...allValues)).toFixed(2);
-    let maxValue = (Math.max(...allValues)).toFixed(2);
+    const minValue = (Math.min(...allValues)).toFixed(0);
+    const maxValue = (Math.max(...allValues)).toFixed(0);
     // console.log(geneData, allValues, minValue, maxValue);
 
     const echartsOption = {
@@ -211,10 +193,10 @@ export default function option (geneData) {
             // splitArea: {
             //     show: true
             // },
-            min: "dataMin",
-            max: "dataMax",
-            // min: minValue,
-            // max: maxValue,
+            // min: "dataMin",
+            // max: "dataMax",
+            min: minValue,
+            max: maxValue,
             axisLabel: {
                 fontSize: 15,
                 // fontFamily: "arial",
@@ -239,15 +221,19 @@ export default function option (geneData) {
             itemSize: 20,
             orient: "vertical",
             top: "10%",
-            right: "1%",                
+            right: "1%",
             feature: {
                 // dataZoom: {},
                 dataView: {
                     show: true,
                     readOnly: true,
+                    backgroundColor: "#f8f9fa",
+                    textareaColor: "#fff",
                     buttonColor: "#00498f",
                     lang: ["Data View (copy and paste text into spreadsheet software for external use)", "Close"],
-                    optionToContent: function (opt) {
+                    
+                    optionToContent: function () {
+                        
                         const dataViewData = [
                             // Format is an array for each set of values
                             // E.g. for one tissue: [eye1, eye2, eye3, eye4]
@@ -275,7 +261,7 @@ export default function option (geneData) {
                         const completeText = `${header}\n${formattedText}`;
 
                         // Create a textarea element with the formatted text
-                        const textbox = `<textarea style="resize: none; width: 100%; height: 98.5%;">${completeText}</textarea>`;
+                        const textbox = `<textarea style="resize: none; width: 100%; height: 90%;">${completeText}</textarea>`;
                         return textbox;
                         
                     }
@@ -286,6 +272,11 @@ export default function option (geneData) {
                     name: `${geneData.Gene_ID}_expression`,
                     title: "Save as PNG",
                     pixelRatio: 12
+                }
+            },
+            emphasis: {
+                iconStyle: {
+                    textFill: "#00498f",
                 }
             }
         },
