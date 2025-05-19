@@ -11,7 +11,7 @@ export default function GeneSelection({ mainIDs, secondaryIDs, children }) {
     // const mainIDs = useRef(data.map( arr => arr.Gene_ID ));
     // const secondaryIDs = useRef(data.map( arr => arr.Contig_ID ));
     
-    console.log("RENDER")
+    // console.log("RENDER")
 
     return(
         <div className="geneselection__container">

@@ -1,6 +1,7 @@
 import icon from "/icon-lobster.svg";
 import book from "../assets/book.svg";
-import github from "../assets/github.svg";
+// import github from "../assets/github.svg";
+import logo from "/logo.svg"
 import infoCircle from "../assets/info-circle.svg";
 
 const navbar = {
@@ -31,7 +32,7 @@ export default function NavBar() {
                 <img className="navbar__icons" src={book} alt="book icon" />
             </a>
             <a href="https://github.com/Tom-Jenkins/LobsterGeneX">
-                <img className="navbar__icons" src={github} alt="github icon" />
+                <img className="navbar__icons" src={logo} alt="github icon" />
             </a>
         </div>
     </nav>
