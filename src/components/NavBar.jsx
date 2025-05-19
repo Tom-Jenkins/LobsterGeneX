@@ -31,8 +31,8 @@ export default function NavBar() {
             <a href="https://metazoa.ensembl.org/Homarus_gammarus_gca958450375v1/Info/Index">
                 <img className="navbar__icons" src={book} alt="book icon" />
             </a>
-            <a href="https://github.com/Tom-Jenkins/LobsterGeneX">
-                <img className="navbar__icons" src={logo} alt="github icon" />
+            <a href="https://tomjenkins.co.uk">
+                <img className="navbar__icons" src={logo} alt="logo icon" />
             </a>
         </div>
     </nav>
