@@ -21,6 +21,7 @@
 .chart__container > div > div:nth-child(3) > div:nth-child(3) > div {
     font-size: 1.7rem !important;
     font-family: inherit;
+    margin-bottom: 30px !important;
     &:hover {
         background-color: var(--colour-secondary) !important;
         color: var(--colour-black) !important;
