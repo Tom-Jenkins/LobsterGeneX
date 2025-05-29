@@ -49,7 +49,11 @@ export default function NavBar() {
                 </div>
             </nav>
 
-            <Modal isOpen={modalOpen} renderCloseBtn={true} onClose={handleModalClose} >
+            <Modal 
+                modalOpen={modalOpen} 
+                renderCloseBtn={true} renderCloseX={true}
+                onClose={handleModalClose}
+                >
                 <h4>About LobsterGeneX</h4>
                 {/* <p>
                     LobsterGeneX is a web application designed to visualise gene expression results from ten different tissue types from the European lobster (<em>Homarus gammarus</em>).
