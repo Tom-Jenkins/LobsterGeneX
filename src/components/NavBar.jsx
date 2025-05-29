@@ -55,20 +55,20 @@ export default function NavBar() {
                 onClose={handleModalClose}
                 >
                 <h4>About LobsterGeneX</h4>
-                {/* <p>
-                    LobsterGeneX is a web application designed to visualise gene expression results from ten different tissue types from the European lobster (<em>Homarus gammarus</em>).
-                </p>
                 <p>
-                    Tissue types analysed:
-                    <ul>
-                        <li>Eye, Gill, Nerve, Muscle, Heart</li>
-                        <li>Hepatopancreas, Gut</li>
-                        <li>Ovary, Testes</li>
-                        <li>Juvenile</li>
-                    </ul>  
+                    LobsterGeneX is a React web application designed to visualise gene expression results from ten different tissue types from the European lobster (<em>Homarus gammarus</em>).
                 </p>
-                <p class="fw-bold">Citation</p>
-                <p>XXX</p> */}
+                <p>Tissue types analysed:</p>
+                <ul>
+                    <li>Eye, Gill, Nerve, Muscle, Heart</li>
+                    <li>Hepatopancreas, Gut</li>
+                    <li>Ovary, Testes</li>
+                    <li>Juvenile</li>
+                </ul>  
+                <p>
+                    The gene annotation is available from EnsemblMetazoa. All results reserved. Article in preperation (Paris et al.). To launch the application, click the link below.
+                </p>
+                <p>www.lobstergenex.com</p>
             </Modal>
         </>
     );

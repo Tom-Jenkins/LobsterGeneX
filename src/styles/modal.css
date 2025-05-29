@@ -43,7 +43,7 @@
     opacity: 0;
     transition: all .4s .1s;
 
-    width: 95%;
+    width: 80%;
     max-width: 1200px;
     height: 50%;
     overflow-y: auto;
