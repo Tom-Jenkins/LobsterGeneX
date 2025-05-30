@@ -49,8 +49,8 @@ export default function App() {
         gene.current = "";
         if (inputRef.current) {
             inputRef.current.value = "";
-        }
-    }
+        };
+    };
 
     // Set Echarts data for selected gene and render on click
     function handlePlotExpression(e) {
@@ -59,8 +59,15 @@ export default function App() {
             const geneIdx = data.map(i => i.Gene_ID).indexOf(gene.current);
             const geneData = data[geneIdx];
             setgeneData(geneData);
-        }  
-    }
+        };  
+    };
+
+    // Set Echarts data for random gene and render on click
+    function handlePlotRandom(e) {
+        e.preventDefault();
+        const randomData = data[Math.floor(Math.random() * data.length)];
+        setgeneData(randomData);
+    };
 
     // Only show spinner during loading
     if (loading) return <Spinner />
@@ -88,6 +95,11 @@ export default function App() {
                         type="submit"
                         value="Plot Expression"
                         onClick={handlePlotExpression}
+                    />
+                    <input 
+                        type="submit"
+                        value="Plot Random"
+                        onClick={handlePlotRandom}
                     />
                 </GeneSelection>
             }

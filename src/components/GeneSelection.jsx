@@ -2,15 +2,7 @@
 // import Datalist from "./Datalist";
 
 export default function GeneSelection({ mainIDs, secondaryIDs, children }) {
-    
-    // const [gene, setGene] = useState("");
-    // const gene = useRef("");
-    // const inputRef = useRef(null);
-    
-    // Extract gene IDs and scaffold from data
-    // const mainIDs = useRef(data.map( arr => arr.Gene_ID ));
-    // const secondaryIDs = useRef(data.map( arr => arr.Contig_ID ));
-    
+      
     // console.log("RENDER")
 
     return(
