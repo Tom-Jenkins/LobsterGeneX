@@ -18,9 +18,9 @@
     padding: .5rem;
 }
 
-.geneselection__form input[type="text"] {
+/* .geneselection__form input[type="text"] {
     width: 30rem;
-}
+} */
 
 /* Remove down arrow in datalist */
 input::-webkit-calendar-picker-indicator {
