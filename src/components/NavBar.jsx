@@ -6,16 +6,16 @@ import infoCircle from "../assets/info-circle.svg";
 import { useState } from "react";
 import Modal from "./Modal";
 
-const navbar = {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "1.5rem",
-    alignItems: "center",
-    justifyContent: "space-between",
-    width: "100%",
-    backgroundColor: "var(--colour-primary)",
-    padding: "1rem 2rem",
-}
+// const navbar = {
+//     display: "flex",
+//     flexWrap: "wrap",
+//     gap: "1.5rem",
+//     alignItems: "center",
+//     justifyContent: "space-between",
+//     width: "100%",
+//     backgroundColor: "var(--colour-primary)",
+//     padding: "1rem 2rem",
+// }
 
 export default function NavBar() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -30,7 +30,7 @@ export default function NavBar() {
 
     return (
         <>
-            <nav style={navbar}>
+            <nav className="navbar">
                 <div className="navbar__title">
                     <img className="navbar__title--icon" src={icon} alt="lobster icon" />
                     <a href="https://www.lobstergenex.com/">LobsterGeneX</a>

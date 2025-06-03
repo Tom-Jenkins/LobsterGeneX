@@ -1,4 +1,4 @@
-/* .navbar {
+.navbar {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
@@ -8,7 +8,7 @@
     width: 100%;
     background-color: var(--colour-primary);
     padding: 1rem 2rem;
-} */
+}
 
 .navbar__title {
     display: flex;
@@ -31,7 +31,7 @@
 
 .navbar__icons--container {
     display: flex;
-    gap: 3rem;
+    gap: 3.5rem;
     align-items: center;
 
     & > a {
@@ -42,4 +42,13 @@
 .navbar__icons {
     height: 2.5rem;
     width: auto;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+    .navbar__icons--container {
+        gap: 2.5rem;
+    }
 }
