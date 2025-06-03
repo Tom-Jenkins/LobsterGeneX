@@ -54,21 +54,23 @@ export default function NavBar() {
                 renderCloseBtn={true} renderCloseX={true}
                 onClose={handleModalClose}
                 >
-                <h4>About LobsterGeneX</h4>
-                <p>
-                    LobsterGeneX is a React web application designed to visualise gene expression results from ten different tissue types from the European lobster (<em>Homarus gammarus</em>).
-                </p>
-                <p>Tissue types analysed:</p>
-                <ul>
-                    <li>Eye, Gill, Nerve, Muscle, Heart</li>
-                    <li>Hepatopancreas, Gut</li>
-                    <li>Ovary, Testes</li>
-                    <li>Juvenile</li>
-                </ul>  
-                <p>
-                    The gene annotation is available from EnsemblMetazoa. All results reserved. Article in preperation (Paris et al.). To launch the application, click the link below.
-                </p>
-                <p>www.lobstergenex.com</p>
+                <div>
+                    <h4>About LobsterGeneX</h4>
+                    <p>
+                        LobsterGeneX is a React web application designed to visualise gene expression results from ten different tissue types from the European lobster (<em>Homarus gammarus</em>).
+                    </p>
+                    <p>Tissue types analysed:</p>
+                    
+                        <ul>
+                            <li>Eye, Gill, Nerve, Muscle, Heart</li>
+                            <li>Hepatopancreas, Gut</li>
+                            <li>Ovary, Testes</li>
+                            <li>Juvenile</li>
+                        </ul>
+                    <p>
+                        The gene annotation is available from <a href="https://metazoa.ensembl.org/Homarus_gammarus_gca958450375v1/Info/Index?db=core;g=ENSHGAG00000035340;r=H.gam_scaffold_13920:1596866-1605528">EnsemblMetazoa</a>. All results reserved. Article in preperation (Paris et al.). To launch the application, click the link below.
+                    </p>
+                </div>
             </Modal>
         </>
     );

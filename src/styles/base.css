@@ -42,18 +42,6 @@ p {
     text-align: center;
 }
 
-ul {
-    list-style-type: disc;
-    list-style-position: outside;
-    text-align: left;
-
-    & > li {
-        margin-bottom: .8rem;
-        line-height: 1.5;
-        font-size: 2rem;
-    }
-}
-
 a {
     text-decoration: none;
     color: inherit;
