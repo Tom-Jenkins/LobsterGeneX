@@ -45,7 +45,8 @@
 
     width: 80%;
     max-width: 1000px;
-    height: 50%;
+    height: 65%;
+    max-height: fit-content;
     overflow-y: auto;
     background-color: var(--colour-white);
     box-shadow: 0 2rem 4rem rgba(44, 44, 44, 0.2);
