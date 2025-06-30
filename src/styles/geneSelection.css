@@ -26,6 +26,7 @@
 .geneselection__form input[type="submit"] {
   background-color: #f5f5f5;
   border: 1px solid var(--colour-black);
+  color: var(--colour-black);
 
   &:hover {
     background-color: #eeeeee;
