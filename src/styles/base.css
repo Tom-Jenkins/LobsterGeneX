@@ -1,9 +1,10 @@
 *,
 *::after,
 *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: "Trebuchet MS", sans-serif;
 }
 
 /* 
@@ -14,35 +15,34 @@ This font size defines the value of 1rem, as rem units are relative to the root 
 */
 
 html {
-    font-size : 62.5%;
-    box-sizing: border-box;
+  font-size: 62.5%;
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
-    html {
-        font-size : 50%;
-        box-sizing: border-box;
-        /* scrollbar-gutter: stable; */
-    }
+  html {
+    font-size: 50%;
+    box-sizing: border-box;
+    /* scrollbar-gutter: stable; */
+  }
 }
 
 body {
-    font-family: "Trebuchet MS", sans-serif;
-    line-height: 1.6;
+  line-height: 1.6;
 }
 
 h4 {
-    font-size: 4rem;
-    margin-bottom: 2rem;
+  font-size: 4rem;
+  margin-bottom: 2rem;
 }
 
 p {
-    font-size: 2rem;
-    padding: 1rem;
-    text-align: center;
+  font-size: 2rem;
+  padding: 1rem;
+  text-align: center;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }

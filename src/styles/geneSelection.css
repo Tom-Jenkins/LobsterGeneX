@@ -1,25 +1,38 @@
 .geneselection__container {
-    padding: 0 2.5rem;
+  padding: 0 2.5rem;
 }
 
 .geneselection__title {
-    font-size: 2.4rem;
-    margin-bottom: .5rem;
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .geneselection__form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .geneselection__form input {
-    font-size: 2rem;
-    padding: .5rem;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
 }
 
 .geneselection__form input[type="text"] {
-    width: 27rem;
+  width: 27rem;
+}
+
+.geneselection__form input[type="reset"],
+.geneselection__form input[type="submit"] {
+  background-color: #f5f5f5;
+  border: 1px solid var(--colour-black);
+
+  &:hover {
+    background-color: #eeeeee;
+  }
+  &:active {
+    background-color: #fafafa;
+  }
 }
 
 /* Remove down arrow in datalist */
