@@ -313,7 +313,7 @@ export default function option(geneData) {
     // GRID
     grid: {
       top: "22%", // padding between chart and subtitle
-      bottom: "25%",
+      bottom: window.innerWidth > 768 ? "20%" : "25%",
       left: "15%",
       // containLabel: true
     },
