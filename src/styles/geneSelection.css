@@ -20,6 +20,7 @@
 
 .geneselection__form input[type="text"] {
   width: 27rem;
+  border: 1px solid var(--colour-black);
 }
 
 .geneselection__form input[type="reset"],
