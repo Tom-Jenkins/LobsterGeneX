@@ -23,6 +23,11 @@
   border: 1px solid var(--colour-black);
 }
 
+/* Remove down arrow in datalist */
+.geneselection__form input[type="text"]::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
+
 .geneselection__form input[type="reset"],
 .geneselection__form input[type="submit"] {
   background-color: #f5f5f5;
@@ -35,9 +40,4 @@
   &:active {
     background-color: #fafafa;
   }
-}
-
-/* Remove down arrow in datalist */
-input::-webkit-calendar-picker-indicator {
-  display: none !important;
 }
