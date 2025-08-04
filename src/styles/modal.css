@@ -1,18 +1,18 @@
 .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
 
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
 
-    /* opacity: 0;
+  /* opacity: 0;
     visibility: hidden;
     transition: all .4s; */
 }
@@ -26,109 +26,109 @@
 }
 
 .modal--active {
-    opacity: 1;
-    visibility: visible;
+  opacity: 1;
+  visibility: visible;
 }
 
 .modal--active .modal__container {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .modal__container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.2);
-    opacity: 0;
-    transition: all .4s .1s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.2);
+  opacity: 0;
+  transition: all 0.4s 0.1s;
 
-    width: 80%;
-    max-width: 1000px;
-    height: 65%;
-    max-height: fit-content;
-    overflow-y: auto;
-    background-color: var(--colour-white);
-    box-shadow: 0 2rem 4rem rgba(44, 44, 44, 0.2);
+  width: 80%;
+  max-width: 1000px;
+  height: 80%;
+  max-height: fit-content;
+  overflow-y: auto;
+  background-color: var(--colour-white);
+  box-shadow: 0 2rem 4rem rgba(44, 44, 44, 0.2);
 
-    border-radius: 3px;
-    padding: 5rem 1rem;
-    font-size: 5rem;
-    text-align: center;
+  border-radius: 3px;
+  padding: 5rem 1rem;
+  font-size: 5rem;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
-    .modal__container {
-        width: 100%;
-        height: 75%;
-        max-height: fit-content;
-    }
+  .modal__container {
+    width: 100%;
+    height: 75%;
+    max-height: fit-content;
+  }
 }
 
 .modal__closeBtn {
-    padding: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.30rem;
-    font-size: 1.5rem;
-    font-weight: 700;
-    background-color: var(--colour-primary);
-    color: var(--colour-white);
-    cursor: pointer;
-    border: inherit;
-    border-radius: 5px;
+  padding: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background-color: var(--colour-primary);
+  color: var(--colour-white);
+  cursor: pointer;
+  border: inherit;
+  border-radius: 5px;
 
-    &:hover {
-        background-color: var(--colour-secondary);
-        color: var(--colour-black);
-    }
+  &:hover {
+    background-color: var(--colour-secondary);
+    color: var(--colour-black);
+  }
 
-    &:active {
-        transform: scale(.95);
-    }
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 .modal__closeX {
-    color: var(--colour-primary);
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    font-size: 6rem;
-    text-decoration: none;
-    display: inline-block;
-    line-height: 3rem;
-    cursor: pointer;
+  color: var(--colour-primary);
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 6rem;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 3rem;
+  cursor: pointer;
 
-    &:hover {
-        color: var(--colour-secondary);
-    }
+  &:hover {
+    color: var(--colour-secondary);
+  }
 
-    &:active {
-        transform: scale(.95);
-    }
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 .modal__container > h4 {
-    margin-top: -1rem;
+  margin-top: -1rem;
 }
 
 .modal__container > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    & > ul {
+  & > ul {
     list-style-type: disc;
     list-style-position: inside;
     text-align: left;
     margin-bottom: 1rem;
 
-        & > li {
-            font-size: 2rem;
-        }
+    & > li {
+      font-size: 2rem;
     }
+  }
 
-    & > p > a {
-        color: var(--colour-primary);
-    }
+  & > p > a {
+    color: var(--colour-primary);
+  }
 }
