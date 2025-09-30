@@ -12,6 +12,11 @@ Tissue types analysed:
 
 The gene annotation is available from [EnsemblMetazoa](https://metazoa.ensembl.org/Homarus_gammarus_gca958450375v1/Info/Index). All results reserved. Article in preperation (Paris _et al_.). To launch the application, click the link below.
 
+To view the count data click on one of the links below:  
+[Normalised count data](https://github.com/Tom-Jenkins/LobsterGeneX/blob/main/public/protein_coding_expression_normalised_counts.csv)  
+[VST count data](https://github.com/Tom-Jenkins/LobsterGeneX/blob/main/public/protein_coding_expression_VST_counts.csv)
+
+To launch the application click the link below:  
 [www.lobstergenex.com](https://lobstergenex.com)
 
 ## Developer
