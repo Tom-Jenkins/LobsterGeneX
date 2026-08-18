@@ -68,7 +68,7 @@ export default function NavBar() {
                             <li>Juvenile</li>
                         </ul>
                     <p>
-                        The gene annotation is available from <a href="https://metazoa.ensembl.org/Homarus_gammarus_gca958450375v1/Info/Index?db=core;g=ENSHGAG00000035340;r=H.gam_scaffold_13920:1596866-1605528">EnsemblMetazoa</a>. All results reserved. Article in preparation (Paris & Jenkins <em>et al</em>.).
+                        The gene annotation is available from <a href="https://metazoa.ensembl.org/Homarus_gammarus_gca958450375v1/Info/Index?db=core;g=ENSHGAG00000035340;r=H.gam_scaffold_13920:1596866-1605528">EnsemblMetazoa</a>. All results reserved. Article: <a href="https://doi.org/10.1093/gbe/evag138">Paris et al. 2026</a>.).
                     </p>
                 </div>
             </Modal>
